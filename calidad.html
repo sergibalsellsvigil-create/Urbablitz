@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calidad DTG | Urbanblitz</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <h1 class="logo">URBANBLITZ</h1>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Quiénes somos</a></li>
+                <li class="dropdown">
+                    <a href="#">Colecciones ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="limited-hoodies.html">Sudaderas Edición Limitada</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="tienda.html">Tienda ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tienda-hombre.html">Hombre</a></li>
+                        <li><a href="tienda-mujer.html">Mujer</a></li>
+                        <li><a href="tienda-unisex.html">Unisex</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="carrito.html">🛒 <span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shop-header" style="padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/calidad-bg.jpg') center/cover;">
+            <h2 class="section-title" style="font-size: clamp(3rem, 8vw, 5rem);">CALIDAD SIN LÍMITES</h2>
+            <p class="info-text" style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">No solo diseñamos estilo, construimos armaduras urbanas preparadas para el asfalto.</p>
+        </section>
+
+        <section class="legal-container" style="padding: 80px 5%; text-align: center; max-width: 1000px; margin: 0 auto;">
+            <h3 style="color: var(--rojo-corporativo); font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase;">Tecnología DTG (Direct to Garment)</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--blanco-puro); opacity: 0.9;">
+                En <strong>Urbanblitz</strong> utilizamos la tecnología de impresión digital más avanzada del mercado. A diferencia del vinilo o la serigrafía tradicional, el <strong>DTG</strong> inyecta las tintas directamente en las fibras del algodón, garantizando un acabado suave al tacto y una definición cinematográfica que no se cuartea con el tiempo.
+            </p>
+        </section>
+
+        <section style="padding-bottom: 100px; padding: 0 5%;">
+            <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+                
+                <article class="product-card" style="border: 1px dashed var(--rojo-corporativo); padding: 40px 25px; text-align: center;">
+                    <h4 style="color: var(--rojo-corporativo); margin-bottom: 15px; font-weight: 900;">ALTA DEFINICIÓN</h4>
+                    <p style="font-size: 0.9rem; color: var(--texto-secundario);">Capturamos hasta el último detalle de nuestros diseños con una gama cromática infinita y vibrante.</p>
+                </article>
+
+                <article class="product-card" style="border: 1px dashed var(--rojo-corporativo); padding: 40px 25px; text-align: center;">
+                    <h4 style="color: var(--rojo-corporativo); margin-bottom: 15px; font-weight: 900;">TACTO CERO</h4>
+                    <p style="font-size: 0.9rem; color: var(--texto-secundario);">La tinta se funde con la prenda. Olvídate de los parches rígidos e incómodos en el pecho.</p>
+                </article>
+
+                <article class="product-card" style="border: 1px dashed var(--rojo-corporativo); padding: 40px 25px; text-align: center;">
+                    <h4 style="color: var(--rojo-corporativo); margin-bottom: 15px; font-weight: 900;">RESISTENCIA</h4>
+                    <p style="font-size: 0.9rem; color: var(--texto-secundario);">Tintas ecológicas de alta fijación que resisten lavado tras lavado sin perder su intensidad original.</p>
+                </article>
+
+                <article class="product-card" style="border: 1px dashed var(--rojo-corporativo); padding: 40px 25px; text-align: center;">
+                    <h4 style="color: var(--rojo-corporativo); margin-bottom: 15px; font-weight: 900;">SOSTENIBILIDAD</h4>
+                    <p style="font-size: 0.9rem; color: var(--texto-secundario);">Procesos limpios con certificación OEKO-TEX, reduciendo drásticamente el consumo de agua.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section style="background: var(--negro-tarjeta); padding: 100px 5%; border-top: 1px solid var(--gris-borde-fuerte);">
+            <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; align-items: center;">
+                
+                <article>
+                    <h2 style="color: var(--rojo-corporativo); font-weight: 900; font-size: 2.2rem; margin-bottom: 20px;">ALGODÓN ORGÁNICO PREMIUM</h2>
+                    <p style="margin-bottom: 25px; line-height: 1.6;">Nuestras prendas están fabricadas con algodón de alto gramaje (220-350 GSM). Streetwear de alta gama diseñado para durar.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <span style="color: var(--rojo-corporativo);">⚡</span> Pre-encogido para mantener el ajuste perfecto.
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <span style="color: var(--rojo-corporativo);">⚡</span> Costuras reforzadas en hombros y cuello.
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <span style="color: var(--rojo-corporativo);">⚡</span> Interior cepillado para una suavidad extrema.
+                        </li>
+                    </ul>
+                </article>
+
+                <aside style="border: 2px solid var(--rojo-corporativo); padding: 40px; background: #000; position: relative;">
+                    <h3 style="text-align: center; font-weight: 900; letter-spacing: 3px; margin-bottom: 20px;">GUÍA DE CUIDADO</h3>
+                    <div style="font-size: 0.9rem; line-height: 2;">
+                        <p><strong>1.</strong> Lavar siempre la prenda del revés.</p>
+                        <p><strong>2.</strong> Agua fría (Máximo 30°C).</p>
+                        <p><strong>3.</strong> No utilizar secadora (Enemigo nº1 del DTG).</p>
+                        <p><strong>4.</strong> Planchar del revés para proteger el diseño.</p>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+
+        <section style="text-align: center; padding: 120px 20px;">
+            <h2 style="letter-spacing: 8px; font-weight: 900; margin-bottom: 40px; text-transform: uppercase;">La calidad es nuestra identidad</h2>
+            <a href="tienda.html" class="btn-add-cart" style="display: inline-block; padding: 20px 60px; font-size: 1.2rem; text-decoration: none;">VER COLECCIÓN</a>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+    <section class="footer-container">
+        <article class="footer-brand">
+            <h3 class="logo-footer">URBANBLITZ</h3>
+            <p class="slogan">NO LIMITS. NO EXCUSES.</p>
+            <p class="est-date">EST. 2026 — Streetwear Collective.</p>
+            
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/urbanblitz.shop2026?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@urbanblitz.shop?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </article>
+
+        <nav class="footer-nav">
+            <h3 class="footer-title">Explorar</h3>
+            <ul class="footer-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Quiénes somos</a></li>
+                <li><a href="tienda.html">Tienda Oficial</a></li>
+                <li><a href="colecciones.html">Colecciones</a></li>
+            </ul>
+        </nav>
+
+        <nav class="footer-support">
+            <h3 class="footer-title">Atención al Clan</h3>
+            <ul class="footer-list">
+                <li><a href="contacto.html" class="highlight-link">¿Necesitas ayuda?</a></li>
+                <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                <li><a href="politica-privacidad.html">Privacidad</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="footer-legal">
+        <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
+    </section>
+</footer>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

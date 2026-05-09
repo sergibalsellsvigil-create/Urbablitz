@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Urbanblitz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <h1 class="logo">URBANBLITZ</h1>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Quiénes somos</a></li>
+                <li class="dropdown">
+                    <a href="colecciones.html">Colecciones ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="limited-hoodies.html">Sudaderas Edición Limitada</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="tienda.html">Tienda ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tienda-hombre.html">Hombre</a></li>
+                        <li><a href="tienda-mujer.html">Mujer</a></li>
+                        <li><a href="tienda-unisex.html">Unisex</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><a href="carrito.html">🛒 <span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-info-container" style="padding: 100px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('img/urban-neon.jpg') center/cover;">
+            <h2 class="section-title-inside" style="font-size: clamp(2.5rem, 7vw, 4.5rem); margin: 0 auto;">CONECTA CON EL CLAN</h2>
+            <p class="info-text-center">¿Dudas sobre tu pedido, colaboraciones o pura actitud? Suéltalo aquí.</p>
+        </section>
+
+        <section style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding: 80px 5%; max-width: 1300px; margin: 0 auto;">
+            
+            <aside style="background: var(--negro-tarjeta); border: 1px solid var(--gris-borde-fuerte); padding: 40px; height: fit-content;">
+                <h3 style="color: var(--rojo-corporativo); font-weight: 900; letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase; border-bottom: 2px solid var(--rojo-corporativo); padding-bottom: 10px;">Canales Oficiales</h3>
+                
+                <div style="margin-bottom: 30px;">
+                    <p style="color: var(--texto-secundario); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Email de soporte</p>
+                    <p style="font-size: 1.1rem; word-break: break-all;">urbanblitz.shop2025@gmail.com</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <p style="color: var(--texto-secundario); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Comunidad Instagram</p>
+                    <a href="https://www.instagram.com/urbanblitz.shop2026?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="font-size: 1.1rem; color: var(--rojo-corporativo); text-decoration: none; font-weight: 900;">@urbanblitz.shop2026</a>
+                </div>
+
+                <div style="margin-bottom: 40px;">
+                    <p style="color: var(--texto-secundario); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Underground TikTok</p>
+                    <a href="https://www.tiktok.com/@urbanblitz.shop?is_from_webapp=1&sender_device=pc" target="_blank" style="font-size: 1.1rem; color: var(--rojo-corporativo); text-decoration: none; font-weight: 900;">@urbanblitz.shop</a>
+                </div>
+
+                <p style="border-left: 2px solid var(--rojo-corporativo); padding-left: 15px; font-style: italic; opacity: 0.5; font-size: 0.85rem; line-height: 1.6;">
+                    Respondemos en menos de 24 horas laborables. El clan nunca deja a nadie atrás.
+                </p>
+            </aside>
+
+            <section style="background: var(--negro-tarjeta); border: 1px solid var(--gris-borde-fuerte); padding: 50px;">
+                <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 40px; text-transform: uppercase;">Manifiesto de contacto</h3>
+                
+                <form id="contact-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <label style="font-weight: 900; font-size: 0.75rem; color: var(--rojo-corporativo); text-transform: uppercase;">Nombre / Alias</label>
+                        <input type="text" placeholder="¿Cómo te llamamos?" required 
+                               style="background: #000; border: 1px solid var(--gris-borde-fuerte); padding: 18px; color: #fff; border-radius: 0;">
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <label style="font-weight: 900; font-size: 0.75rem; color: var(--rojo-corporativo); text-transform: uppercase;">Tu Email</label>
+                        <input type="email" placeholder="Para responderte" required 
+                               style="background: #000; border: 1px solid var(--gris-borde-fuerte); padding: 18px; color: #fff; border-radius: 0;">
+                    </div>
+
+                    <div style="grid-column: span 2; display: flex; flex-direction: column; gap: 10px;">
+                        <label style="font-weight: 900; font-size: 0.75rem; color: var(--rojo-corporativo); text-transform: uppercase;">Mensaje</label>
+                        <textarea rows="6" placeholder="Suelta lo que tengas que decir..." required 
+                                  style="background: #000; border: 1px solid var(--gris-borde-fuerte); padding: 18px; color: #fff; border-radius: 0; resize: none;"></textarea>
+                    </div>
+
+                    <div style="grid-column: span 2;">
+                        <button type="submit" class="btn-rojo-urban" style="width: 100%; font-size: 1.1rem; padding: 20px; cursor: pointer; border: none;">
+                            ENVIAR AL CLAN
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section style="text-align: center; padding: 100px 20px; border-top: 1px solid var(--gris-borde-fuerte);">
+            <h2 style="color: var(--rojo-corporativo); letter-spacing: clamp(5px, 2vw, 15px); font-size: clamp(1.5rem, 5vw, 3rem); font-weight: 900;">NO LIMITS. NO EXCUSES.</h2>
+            <p style="opacity: 0.4; margin-top: 20px; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem;">Urbanblitz Collective — Est. 2026</p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <section class="footer-container">
+            <article class="footer-brand">
+                <h3 class="logo-footer">URBANBLITZ</h3>
+                <p class="slogan">NO LIMITS. NO EXCUSES.</p>
+                <p class="est-date">EST. 2026 — Streetwear Collective.</p>
+                
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/urbanblitz.shop2026?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@urbanblitz.shop?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </article>
+            <nav class="footer-nav">
+                <h3 class="footer-title">Explorar</h3>
+                <ul class="footer-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="historia.html">Quiénes somos</a></li>
+                    <li><a href="tienda.html">Tienda Oficial</a></li>
+                    <li><a href="colecciones.html">Colecciones</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-support">
+                <h3 class="footer-title">Atención al Clan</h3>
+                <ul class="footer-list">
+                    <li><a href="contacto.html" class="highlight-link">¿Necesitas ayuda?</a></li>
+                    <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="politica-privacidad.html">Privacidad</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="footer-legal">
+            <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
+        </section>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = "ENVIANDO...";
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert("Mensaje enviado con éxito. El Clan se pondrá en contacto contigo pronto.");
+                btn.innerText = originalText;
+                btn.disabled = false;
+                this.reset();
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

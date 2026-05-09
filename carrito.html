@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito | Urbanblitz</title>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+</head>
+
+<body class="cart-page">
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <h1 class="logo">URBANBLITZ</h1>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Quiénes somos</a></li>
+                <li class="dropdown">
+                    <a href="#">Colecciones ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="limited-hoodies.html">Sudaderas Edición Limitada</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="tienda.html">Tienda ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tienda-hombre.html">Hombre</a></li>
+                        <li><a href="tienda-mujer.html">Mujer</a></li>
+                        <li><a href="tienda-unisex.html">Unisex</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="carrito.html" class="active">🛒 <span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shop-header">
+            <h2 class="section-title">TU SELECCIÓN</h2>
+            <p class="info-text">Lo que llevas define tu identidad en la calle.</p>
+        </section>
+
+        <section class="cart-container" style="display: grid; grid-template-columns: 1fr 380px; gap: 40px; padding: 0 5%; max-width: 1400px; margin: 0 auto 100px;">
+            
+            <section id="cart-items-container" style="display: flex; flex-direction: column; gap: 15px;">
+                </section>
+
+            <aside class="cart-summary-card" style="background: var(--negro-tarjeta); border: 1px solid var(--gris-borde-fuerte); padding: 30px; position: sticky; top: 120px; height: fit-content;">
+                <h3 style="font-family: 'Inter', sans-serif; font-weight: 900; color: var(--blanco-puro); border-bottom: 2px solid var(--rojo-corporativo); padding-bottom: 15px; margin-bottom: 25px; text-transform: uppercase;">Resumen de compra</h3>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <span style="color: var(--texto-secundario);">Subtotal</span>
+                    <span id="cart-subtotal" style="color: var(--blanco-puro);">0.00 €</span>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
+                    <span style="color: var(--texto-secundario);">Envío Clan (España)</span>
+                    <span style="color: #00ff00; font-weight: 600;">GRATIS</span>
+                </div>
+
+                <div style="border-top: 1px solid var(--gris-borde-fuerte); padding-top: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: baseline;">
+                    <span style="font-weight: 900; color: var(--blanco-puro); font-size: 1.2rem;">TOTAL</span>
+                    <span id="cart-total" style="color: var(--rojo-corporativo); font-size: 2rem; font-weight: 900;">0.00 €</span>
+                </div>
+
+                <button class="btn-add-cart" style="width: 100%; font-size: 1.1rem; padding: 18px;" onclick="checkout()">
+                    FINALIZAR PEDIDO
+                </button>
+
+                <a href="tienda.html" style="display: block; text-align: center; margin-top: 20px; color: var(--texto-secundario); text-decoration: none; font-size: 0.85rem; font-weight: 600;">
+                    ← VOLVER A LA TIENDA
+                </a>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <section class="footer-container">
+            <article class="footer-brand">
+                <h3 class="logo-footer">URBANBLITZ</h3>
+                <p class="slogan">NO LIMITS. NO EXCUSES.</p>
+                <p class="est-date">EST. 2026 — Streetwear Collective.</p>
+            </article>
+            <nav class="footer-nav">
+                <h3 class="footer-title">Explorar</h3>
+                <ul class="footer-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="historia.html">Quiénes somos</a></li>
+                    <li><a href="tienda.html">Tienda Oficial</a></li>
+                    <li><a href="limited-hoodies.html">Colecciones</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-support">
+                <h3 class="footer-title">Atención al Clan</h3>
+                <ul class="footer-list">
+                    <li><a href="contacto.html">¿Necesitas ayuda?</a></li>
+                    <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="politica-privacidad.html">Privacidad</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="footer-legal">
+            <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
+        </section>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        function renderCart() {
+            const container = document.getElementById('cart-items-container');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const totalEl = document.getElementById('cart-total');
+            
+            if (!container) return;
+
+            if (cartList.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 100px 20px; border: 1px dashed var(--gris-borde-fuerte);">
+                        <h3 style="color: var(--texto-secundario); margin-bottom: 20px;">TU CARRITO ESTÁ VACÍO</h3>
+                        <a href="tienda.html" class="btn-add-cart" style="display: inline-block; text-decoration: none;">EXPLORAR TIENDA</a>
+                    </div>
+                `;
+                subtotalEl.innerText = "0.00 €";
+                totalEl.innerText = "0.00 €";
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cartList.forEach((item) => {
+                total += item.precio;
+                html += `
+                    <article class="cart-item" style="display: flex; align-items: center; background: var(--negro-tarjeta); border: 1px solid var(--gris-borde); padding: 15px; gap: 20px;">
+                        <img src="${item.imagen}" style="width: 100px; height: 100px; object-fit: cover; border: 1px solid var(--gris-borde-fuerte);">
+                        <div style="flex-grow: 1;">
+                            <h3 style="font-size: 1rem; margin-bottom: 5px; color: var(--blanco-puro);">${item.nombre}</h3>
+                            <p style="font-size: 0.8rem; color: var(--texto-secundario);">Talla: ${item.talla} | Color: ${item.color}</p>
+                        </div>
+                        <p style="font-weight: 900; color: var(--rojo-corporativo); font-size: 1.1rem;">${item.precio.toFixed(2)} €</p>
+                        <button onclick="removeFromCart(${item.id})" style="background: none; border: none; color: #ff4444; cursor: pointer; font-size: 1.2rem; padding: 10px;">✕</button>
+                    </article>
+                `;
+            });
+
+            container.innerHTML = html;
+            subtotalEl.innerText = `${total.toFixed(2)} €`;
+            totalEl.innerText = `${total.toFixed(2)} €`;
+        }
+
+        function checkout() {
+            if(cartList.length === 0) return alert("Añade algo al carrito primero.");
+            alert("Redirigiendo a pasarela de pago segura...");
+        }
+
+        // Ejecutar render al cargar
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hombre | Urbanblitz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <h1 class="logo">URBANBLITZ</h1>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Quiénes somos</a></li>
+                <li class="dropdown">
+                    <a href="colecciones.html">Colecciones ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="limited-hoodies.html">Sudaderas Edición Limitada</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="tienda.html" class="active">Tienda ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tienda-hombre.html">Hombre</a></li>
+                        <li><a href="tienda-mujer.html">Mujer</a></li>
+                        <li><a href="tienda-unisex.html">Unisex</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="carrito.html">🛒 <span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-info-container" style="text-align: center; padding: 60px 20px;">
+            <h2 class="titulo-categorias-red">COLECCIÓN HOMBRE</h2>
+            <p class="info-text-center">Streetwear masculino que transmite fuerza e identidad.</p>
+        </section>
+
+        <section class="product-grid" style="padding-bottom: 100px;">
+            
+            <article class="product-card-urban">
+                <figure class="product-image" style="position: relative; margin: 0;">
+                    <img src="img/oversized-tee-homme.jpg" alt=" ">
+                    <span class="drop-label">DROP #01</span>
+                </figure>
+                
+                <section class="info-card-content">
+                    <h3 class="product-name-urban">Oversized Tee Street</h3>
+                    <p class="price-red-urban">34.99 €</p>
+                    
+                    <button class="btn-rojo-urban" onclick="addToCart('Oversized Tee Street', 34.99, 'img/oversized-tee-homme.jpg')">
+                        ACCEDER AL PRODUCTO
+                    </button>
+                </section>
+            </article>
+
+        </section>
+    </main>
+
+   <footer class="main-footer">
+    <section class="footer-container">
+        <article class="footer-brand">
+            <h3 class="logo-footer">URBANBLITZ</h3>
+            <p class="slogan">NO LIMITS. NO EXCUSES.</p>
+            <p class="est-date">EST. 2026 — Streetwear Collective.</p>
+            
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/urbanblitz.shop2026" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@urbanblitz.shop" target="_blank" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </article>
+
+        <nav class="footer-nav">
+            <h3 class="footer-title">Explorar</h3>
+            <ul class="footer-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Quiénes somos</a></li>
+                <li><a href="tienda.html">Tienda Oficial</a></li>
+                <li><a href="colecciones.html">Colecciones</a></li>
+            </ul>
+        </nav>
+
+        <nav class="footer-support">
+            <h3 class="footer-title">Atención al Clan</h3>
+            <ul class="footer-list">
+                <li><a href="contacto.html" class="highlight-link">¿Necesitas ayuda?</a></li>
+                <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                <li><a href="politica-privacidad.html">Privacidad</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="footer-legal">
+        <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
+    </section>
+</footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
