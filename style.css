@@ -1,5 +1,5 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (DEFINITIVO CON ESLOGAN CORREGIDO)
+    URBANBLITZ - STYLE.CSS (DEFINITIVO CON EFECTOS HOVER)
    ========================================================================== */
 
 /* RESET Y FONDO GLOBAL */
@@ -9,10 +9,10 @@ body {
     background-color: var(--negro-fondo) !important;
     color: var(--blanco-puro); 
     overflow-x: hidden; 
-    line-height: 1.6; 
 }
 
-a { text-decoration: none; transition: 0.3s; color: inherit; }
+/* Transición suave para todos los enlaces */
+a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 
 /* HEADER Y NAVEGACIÓN */
 .main-header { 
@@ -30,8 +30,6 @@ a { text-decoration: none; transition: 0.3s; color: inherit; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    padding: 0 20px;
 }
 
 .logo { 
@@ -40,31 +38,30 @@ a { text-decoration: none; transition: 0.3s; color: inherit; }
     color: var(--rojo-corporativo); 
     text-transform: uppercase; 
     letter-spacing: 10px;
-    text-align: center;
     margin-bottom: 10px;
 }
 
 .nav-list { 
     display: flex; 
-    justify-content: center; 
     gap: 25px; 
     list-style: none; 
     padding: 0;
-    margin: 0;
 }
-
-.nav-list li { position: relative; }
 
 .nav-list li a { 
     font-weight: 600; 
     text-transform: uppercase; 
     font-size: 0.85rem;
     color: var(--blanco-puro);
-    padding: 10px 0;
-    display: block;
 }
 
-.nav-list li a:hover, .nav-list li a.active { color: var(--rojo-corporativo); }
+/* HOVER MENÚ PRINCIPAL */
+.nav-list li a:hover { 
+    color: var(--rojo-corporativo); 
+    text-shadow: 0 0 10px var(--rojo-corporativo); /* Efecto brillo al pasar ratón */
+}
+
+.nav-list li a.active { color: var(--rojo-corporativo); }
 
 /* SUBMENÚS (DROPDOWNS) */
 .dropdown-menu {
@@ -77,23 +74,21 @@ a { text-decoration: none; transition: 0.3s; color: inherit; }
     min-width: 160px;
     list-style: none;
     padding: 10px 0;
-    display: none;
+    display: none; 
     z-index: 1000;
 }
 
-.dropdown-menu li a {
-    padding: 8px 20px;
-    font-size: 0.75rem;
-    text-align: center;
+.dropdown-menu li a { padding: 8px 20px; display: block; font-size: 0.8rem; }
+
+/* HOVER SUBMENÚ */
+.dropdown-menu li a:hover {
+    background-color: var(--rojo-corporativo);
+    color: white !important;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
+.dropdown:hover .dropdown-menu { display: block; }
 
-/* ==========================================================================
-    HERO (CORRECCIÓN ESLOGAN: BLANCO, GRANDE Y GLOW ROJO)
-   ========================================================================== */
+/* HERO Y BOTÓN EXPLORAR */
 .hero {
     position: relative;
     height: 100vh;
@@ -112,50 +107,38 @@ a { text-decoration: none; transition: 0.3s; color: inherit; }
 
 .hero-content { position: relative; z-index: 2; text-align: center; }
 
-/* NO LIMITS. NO EXCUSES. CORREGIDO */
 .slogan-hero {
-    font-size: clamp(2.8rem, 7vw, 5.5rem) !important; /* Tamaño imponente */
-    color: #ffffff !important; /* Blanco puro */
+    font-size: clamp(2.8rem, 7vw, 5.5rem) !important;
+    color: #ffffff !important;
     text-transform: uppercase;
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 20px;
-    /* Efecto Glow Rojo intenso */
-    text-shadow: 0 0 15px var(--rojo-corporativo), 
-                 0 0 30px var(--rojo-corporativo),
-                 0 0 45px rgba(255, 0, 0, 0.5);
+    text-shadow: var(--glow-slogan);
     display: block;
 }
 
+/* BOTÓN HERO CON HOVER INVERSO */
 .btn-add-cart-hero {
     display: inline-block;
-    background-color: var(--rojo-corporativo);
+    background-color: var(--rojo-corporativo) !important;
     color: #ffffff !important;
     padding: 15px 35px;
     font-weight: 900;
-    text-transform: uppercase;
+    margin-top: 20px;
     border: 2px solid var(--rojo-corporativo);
     transition: 0.3s;
-    cursor: pointer;
-    font-size: 1rem;
-    letter-spacing: 2px;
 }
 
 .btn-add-cart-hero:hover {
-    background-color: #ffffff;
+    background-color: white !important;
     color: var(--rojo-corporativo) !important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    border-color: white;
+    transform: translateY(-3px); /* Pequeño salto hacia arriba */
 }
 
-/* ==========================================================================
-    CARRUSEL Y CATEGORÍAS
-   ========================================================================== */
-.carousel-header {
-    width: 100%;
-    display: flex;
-    justify-content: center; 
-    background: #000;
-}
+/* CARRUSEL Y TÍTULO PRÓXIMAMENTE */
+.carousel-header { width: 100%; display: flex; justify-content: center; background: #000; }
 
 .texto-proximamente-red {
     color: var(--rojo-corporativo) !important;
@@ -164,19 +147,6 @@ a { text-decoration: none; transition: 0.3s; color: inherit; }
     font-weight: 900;
     text-transform: uppercase;
     margin: 50px 0 30px 0;
-    font-family: var(--fuente-texto);
-}
-
-.new-drops-carousel { 
-    overflow: hidden; 
-    background: #000; 
-    padding-bottom: 60px; 
-}
-
-.carousel-track {
-    display: flex;
-    width: max-content; 
-    animation: scroll-infinito 25s linear infinite;
 }
 
 .carousel-track img {
@@ -184,6 +154,12 @@ a { text-decoration: none; transition: 0.3s; color: inherit; }
     object-fit: cover; margin: 0 15px;
     border: 2px solid #333;
     background-color: #111;
+    transition: 0.5s;
+}
+
+.carousel-track img:hover {
+    border-color: var(--rojo-corporativo);
+    transform: scale(1.05); /* Zoom suave al pasar por las fotos */
 }
 
 @keyframes scroll-infinito {
@@ -191,63 +167,10 @@ a { text-decoration: none; transition: 0.3s; color: inherit; }
     100% { transform: translateX(-50%); }
 }
 
-.titulo-categorias-red {
-    color: var(--rojo-corporativo);
-    font-size: clamp(2rem, 7vw, 4.5rem);
-    font-weight: 900;
-    text-align: center;
-    margin: 60px 0 30px;
-}
+.new-drops-carousel { overflow: hidden; background: #000; padding-bottom: 60px; }
+.carousel-track { display: flex; width: max-content; animation: scroll-infinito 25s linear infinite; }
 
-.categorias-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: var(--max-width);
-    margin: 0 auto 100px;
-    padding: 0 20px;
-}
-
-.categoria-card-new {
-    background: var(--negro-tarjeta);
-    border: 1px solid var(--gris-borde);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.categoria-card-new img {
-    width: 100%; height: 450px;
-    object-fit: cover; display: block;
-    transition: transform 0.5s ease;
-}
-
-.categoria-card-new:hover img { transform: scale(1.1); }
-
-.info-card-content {
-    padding: 25px; text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; background: var(--negro-tarjeta);
-}
-
-.btn-rojo-urban {
-    background-color: var(--rojo-corporativo) !important;
-    color: #fff !important;
-    padding: 15px 30px;
-    font-weight: 900;
-    text-transform: uppercase;
-    border: none;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-
-.btn-rojo-urban:hover {
-    background-color: white !important;
-    color: var(--rojo-corporativo) !important;
-}
-
-/* FOOTER */
+/* FOOTER CON HOVER */
 .main-footer { 
     background: var(--negro-footer);
     border-top: 2px solid var(--rojo-corporativo); 
@@ -259,12 +182,25 @@ a { text-decoration: none; transition: 0.3s; color: inherit; }
     margin: 0 auto; 
     display: grid;
     grid-template-columns: 2fr 1fr 1fr; 
+    gap: 40px;
 }
 
+.footer-list { list-style: none; padding: 0; }
+
+.footer-list li a { 
+    color: var(--texto-secundario) !important; 
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+/* HOVER EN FOOTER */
+.footer-list li a:hover { 
+    color: var(--rojo-corporativo) !important; 
+    padding-left: 5px; /* Efecto de desplazamiento a la derecha */
+}
+
+/* RESPONSIVO */
 @media (max-width: 950px) {
-    .menu-toggle { display: block !important; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); }
-    .nav-list { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--negro-menu); flex-direction: column; }
-    .nav-list.active { display: flex; }
-    .categorias-grid-3 { grid-template-columns: 1fr; }
-    .dropdown-menu { position: static; transform: none; width: 100%; }
+    .nav-list { display: none; }
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
 }
