@@ -33,7 +33,7 @@ img {
    ------------------------------------------------------------------------- */
 .main-header {
     background-color: var(--negro-menu);
-    padding: 18px 0 0;
+    padding: 28px 0 0;
     border-bottom: 2px solid rgba(255, 0, 0, 0.5);
     position: fixed;
     top: 0;
@@ -55,11 +55,11 @@ img {
 /* Logo grande centrado arriba */
 .logo {
     font-family: var(--fuente-logo);
-    font-size: 3rem;
+    font-size: 3.6rem;
     color: var(--rojo-corporativo);
     text-transform: uppercase;
     letter-spacing: 6px;
-    margin: 0 0 14px;
+    margin: 0 0 18px;
     font-weight: 900;
     line-height: 1;
     text-align: center;
@@ -70,7 +70,7 @@ img {
     display: flex;
     gap: 36px;
     list-style: none;
-    padding: 14px 0;
+    padding: 18px 0;
     margin: 0;
     align-items: center;
     border-top: 1px solid rgba(255, 0, 0, 0.2);
@@ -273,7 +273,7 @@ img {
 
 .texto-proximamente-red {
     color: var(--rojo-corporativo);
-    font-size: 0.75rem;
+    font-size: 1.8rem;
     font-weight: 900;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -324,12 +324,12 @@ img {
 
 .titulo-categorias-red {
     color: var(--rojo-corporativo);
-    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-size: 1.1rem;
     font-weight: 900;
     text-align: center;
     margin: 100px 0 50px;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 }
 
 .categorias-grid-3 {
@@ -532,12 +532,12 @@ img {
    9. PAGINAS INTERIORES (encabezados de tienda, colecciones, etc.)
    ------------------------------------------------------------------------- */
 .shop-header {
-    padding: 170px 20px 60px;
+    padding: 200px 20px 60px;
     text-align: center;
 }
 
 .page-info-container {
-    padding: 170px 20px 50px;
+    padding: 200px 20px 50px;
     text-align: center;
 }
 
