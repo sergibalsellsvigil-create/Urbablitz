@@ -1,232 +1,152 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (DEFINITIVO Y CORREGIDO 100%)
+    URBANBLITZ - STYLE.CSS (DEFINITIVO Y 100% FUNCIONAL)
    ========================================================================== */
 
-/* 1. RESET Y VARIABLES */
+/* 1. RESET CRÍTICO (Evita el texto azul y subraya de HTML antiguo) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --rojo-corporativo: #ff0000;
     --negro-fondo: #050505;
     --negro-menu: #000000;
-    --negro-tarjeta: #0d0d0d;
-    --negro-footer: #030303;
     --blanco-puro: #ffffff;
-    --texto-secundario: #a0a0a0;
-    --gris-borde: #333;
     --max-width: 1200px;
-    --fuente-logo: 'Inter', sans-serif;
-    --fuente-texto: 'Inter', sans-serif;
-    --glow-slogan: 0 0 20px rgba(255, 0, 0, 0.7);
 }
 
 body { 
-    margin: 0; 
-    font-family: var(--fuente-texto); 
+    font-family: 'Inter', sans-serif; 
     background-color: var(--negro-fondo) !important;
     color: var(--blanco-puro); 
     overflow-x: hidden; 
 }
 
-a { text-decoration: none; transition: 0.3s ease; color: inherit; }
+/* Forzamos que NINGÚN enlace se vea azul */
+a { 
+    text-decoration: none !important; 
+    color: inherit !important; 
+    transition: 0.3s; 
+}
 
-/* 2. HEADER Y NAVEGACIÓN (CORRECCIÓN MENÚ ROTO) */
+/* 2. HEADER: LOGO Y MENÚ (CENTRADOS) */
 .main-header { 
     background-color: var(--negro-menu);
-    padding: 20px 0; 
+    padding: 25px 0; 
     border-bottom: 2px solid var(--rojo-corporativo);
-    z-index: 10000; 
+    width: 100%;
     position: sticky;
     top: 0;
-    width: 100%;
+    z-index: 9999;
 }
 
 .nav-container {
     max-width: var(--max-width);
     margin: 0 auto;
     display: flex;
-    flex-direction: column; /* Logo arriba, Menú abajo */
-    align-items: center;    /* Centrado horizontal perfecto */
-    position: relative;
-    padding: 0 20px;
-}
-
-/* Ocultar botón hamburguesa en PC */
-.menu-toggle {
-    display: none; 
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: var(--blanco-puro);
-    font-size: 1.8rem;
-    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .logo { 
-    font-family: var(--fuente-logo); 
-    font-size: clamp(2.2rem, 8vw, 3.8rem); 
-    color: var(--rojo-corporativo); 
+    font-size: clamp(2.5rem, 6vw, 3.8rem); 
+    color: var(--rojo-corporativo) !important; 
     text-transform: uppercase; 
     letter-spacing: 12px;
-    margin-bottom: 15px; /* Espacio entre logo y enlaces */
     font-weight: 900;
+    margin-bottom: 15px;
 }
 
 .nav-list { 
     display: flex; 
     gap: 30px; 
     list-style: none; 
-    padding: 0;
-    margin: 0;
-    justify-content: center;
 }
 
 .nav-list li a { 
     font-weight: 600; 
     text-transform: uppercase; 
-    font-size: 0.85rem;
-    color: var(--blanco-puro);
-    transition: 0.3s;
+    font-size: 0.9rem;
+    color: var(--blanco-puro) !important;
 }
 
 .nav-list li a:hover { 
-    color: var(--rojo-corporativo); 
-    text-shadow: 0 0 10px var(--rojo-corporativo); 
+    color: var(--rojo-corporativo) !important; 
 }
 
-/* 3. HERO Y ESLOGAN */
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+/* Ocultar hamburguesa en PC */
+.menu-toggle { display: none; }
+
+/* 3. CARRUSEL (MOVIMIENTO INFINITO CORREGIDO) */
+.new-drops-carousel { 
+    width: 100%;
+    overflow: hidden; /* Corta el exceso de fotos */
+    background: #000; 
+    padding: 60px 0;
 }
 
-.hero-bg-video {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; z-index: 1;
-    filter: brightness(0.4); 
+.carousel-track { 
+    display: flex; 
+    width: max-content; /* Deja que crezca según las fotos */
+    animation: scroll-infinito 25s linear infinite !important; /* ANIMACIÓN ACTIVA */
 }
 
-.hero-content { position: relative; z-index: 2; text-align: center; }
-
-.slogan-hero {
-    font-size: clamp(2.8rem, 7vw, 5.5rem) !important;
-    color: #ffffff !important;
-    text-transform: uppercase;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    text-shadow: var(--glow-slogan);
-    display: block;
+.carousel-track img {
+    width: 300px; 
+    height: 400px;
+    object-fit: cover; 
+    margin: 0 15px; 
+    border: 1px solid #333;
 }
 
-.btn-add-cart-hero {
-    display: inline-block;
-    background-color: var(--rojo-corporativo) !important;
-    color: #ffffff !important;
-    padding: 15px 35px;
-    font-weight: 900;
-    margin-top: 20px;
-    border: 2px solid var(--rojo-corporativo);
-    transition: 0.3s;
+/* REGLA DEL MOVIMIENTO */
+@keyframes scroll-infinito {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Mueve la mitad para que el bucle sea perfecto */
 }
 
-.btn-add-cart-hero:hover {
-    background-color: white !important;
-    color: var(--rojo-corporativo) !important;
-    border-color: white;
-}
-
-/* 4. SECCIÓN DESCUBRE EL CLAN (3 CAJETILLAS) */
-.titulo-categorias-red {
-    color: var(--rojo-corporativo);
-    font-size: clamp(2.2rem, 7vw, 4rem);
-    font-weight: 900;
-    text-align: center;
-    margin: 80px 0 40px;
-    text-transform: uppercase;
-}
-
+/* 4. SECCIÓN 3 CAJETILLAS (DESCUBRE EL CLAN) */
 .categorias-grid-3 {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* Fuerza 3 columnas en PC */
+    grid-template-columns: repeat(3, 1fr) !important; 
     gap: 30px;
     max-width: var(--max-width);
-    margin: 0 auto 100px;
+    margin: 80px auto;
     padding: 0 20px;
 }
 
 .categoria-card-new {
-    background: var(--negro-tarjeta);
-    border: 1px solid var(--gris-borde);
-    transition: 0.3s;
+    background: #0d0d0d;
+    border: 1px solid #222;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    transition: 0.3s;
 }
 
 .categoria-card-new:hover { border-color: var(--rojo-corporativo); }
 
 .categoria-card-new img {
-    width: 100% !important;
-    height: 450px !important; /* Altura de cajetilla */
+    width: 100%;
+    height: 450px;
     object-fit: cover;
-    display: block;
-    transition: 0.5s;
 }
-
-.categoria-card-new:hover img { transform: scale(1.05); }
 
 .info-card-content { padding: 30px; text-align: center; }
 
 .btn-rojo-urban {
     display: inline-block;
-    background-color: var(--rojo-corporativo) !important;
+    background-color: var(--rojo-corporativo);
     color: #fff !important;
     padding: 12px 25px;
     font-weight: 900;
     text-transform: uppercase;
-    border: 2px solid var(--rojo-corporativo);
     margin-top: 15px;
-    transition: 0.3s;
 }
 
-.btn-rojo-urban:hover { background-color: white !important; color: var(--rojo-corporativo) !important; border-color: white; }
-
-/* 5. FOOTER */
-.main-footer { 
-    background: var(--negro-footer);
-    border-top: 2px solid var(--rojo-corporativo); 
-    padding: 60px 20px; 
-}
-
-.footer-container { 
-    max-width: var(--max-width); 
-    margin: 0 auto; 
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr; 
-    gap: 40px;
-}
-
-.footer-list { list-style: none; padding: 0; }
-.footer-list li a { 
-    color: var(--texto-secundario) !important; 
-    font-size: 0.9rem;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.footer-list li a:hover { color: var(--rojo-corporativo) !important; padding-left: 5px; }
-
-/* 6. RESPONSIVO */
+/* 5. RESPONSIVO */
 @media (max-width: 950px) {
-    .menu-toggle { display: block; }
-    .nav-list { display: none; } /* El JS se encarga de mostrarlo */
+    .nav-list { display: none; }
     .categorias-grid-3 { grid-template-columns: 1fr !important; }
-    .footer-container { grid-template-columns: 1fr; text-align: center; }
 }
