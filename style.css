@@ -1,5 +1,5 @@
 /* ==========================================================================
-   URBANBLITZ - STYLE.CSS DEFINITIVO (CORREGIDO DROPDOWN Y ESPACIADO)
+   URBANBLITZ - STYLE.CSS DEFINITIVO (CORREGIDO ESPACIADO INTERIOR)
    ========================================================================== */
 
 /* -------------------------------------------------------------------------
@@ -117,7 +117,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   3. DROPDOWN (CORREGIDO: Soporta Unisex)
+   3. DROPDOWN (INTACTO)
    ------------------------------------------------------------------------- */
 .dropdown {
     position: relative;
@@ -521,15 +521,15 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   9. PAGINAS INTERIORES (AJUSTE DE ESPACIADO SOLICITADO)
+   9. PAGINAS INTERIORES (MODIFICADO: Subida de título y orden de textos)
    ------------------------------------------------------------------------- */
 .shop-header {
-    padding: 280px 20px 60px; /* Aumentado para que no pegue al menú */
+    padding: 180px 20px 40px; /* Reducido de 280px para subir el título */
     text-align: center;
 }
 
 .page-info-container {
-    padding: 280px 20px 50px; 
+    padding: 180px 20px 40px; 
     text-align: center;
 }
 
@@ -539,7 +539,7 @@ img {
     text-transform: uppercase;
     letter-spacing: 5px;
     color: var(--blanco-puro);
-    margin: 0 0 15px;
+    margin: 0 0 5px; /* Margen reducido para que el eslogan esté pegado debajo */
 }
 
 .info-text,
@@ -547,7 +547,7 @@ img {
     font-size: 1rem;
     color: var(--texto-secundario);
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 10px; /* Margen inferior para separar del siguiente bloque */
     max-width: 600px;
     line-height: 1.6;
 }
@@ -761,6 +761,6 @@ img {
 
     .shop-header,
     .page-info-container {
-        padding-top: 180px; /* Ajuste responsivo */
+        padding-top: 150px; 
     }
 }
