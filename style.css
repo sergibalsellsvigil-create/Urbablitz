@@ -1,5 +1,5 @@
 /* ==========================================================================
-   URBANBLITZ - STYLE.CSS DEFINITIVO (CORRECCIONES MÍNIMAS)
+   URBANBLITZ - STYLE.CSS DEFINITIVO
    ========================================================================== */
 
 /* -------------------------------------------------------------------------
@@ -67,12 +67,6 @@ img {
     gap: 16px;
 }
 
-.logo-icon {
-    height: 3rem;
-    width: auto;
-    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.7));
-}
-
 .nav-list {
     display: flex;
     gap: 36px;
@@ -102,20 +96,6 @@ img {
     opacity: 1;
 }
 
-.menu-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    color: var(--blanco-puro);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 4px 8px;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    z-index: 10001;
-}
-
 /* -------------------------------------------------------------------------
    3. DROPDOWN
    ------------------------------------------------------------------------- */
@@ -141,19 +121,21 @@ img {
     padding-top: 10px;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 .dropdown-menu li a {
     display: block;
     padding: 10px 22px;
     font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--blanco-puro);
-    opacity: 0.85;
 }
 
 /* -------------------------------------------------------------------------
-   4. HERO Y ESLOGAN (INDEX)
+   4. HERO Y ESLOGAN
    ------------------------------------------------------------------------- */
 .hero {
     position: relative;
@@ -172,24 +154,45 @@ img {
     color: #ffffff !important;
     text-transform: uppercase;
     font-weight: 900;
-    line-height: 1.1;
-    margin: 0 0 25px;
-    text-shadow: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
+    text-shadow: 0 0 15px var(--rojo-corporativo);
     display: block;
 }
 
 /* -------------------------------------------------------------------------
-   5. AJUSTES EXCLUSIVOS PARA HISTORIA (BOTÓN CON ROJO MÁS PEQUEÑO)
+   5. AJUSTES REGISTRO (PÁGINA FLOTANTE)
+   ------------------------------------------------------------------------- */
+/* Este es el contenedor principal que ahora centra todo y da aire */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px; /* Margen arriba y abajo para que flote */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo-registro.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.auth-card {
+    background: #0a0a0a;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border-radius: 4px; /* Un toque sutil para que no sea tan rígido */
+}
+
+/* -------------------------------------------------------------------------
+   6. AJUSTES HISTORIA (ESLOGAN Y BOTÓN)
    ------------------------------------------------------------------------- */
 .slogan-historia {
     font-size: 2.2rem; 
     color: #ffffff !important;
     text-transform: uppercase;
     font-weight: 900;
-    line-height: 1.1;
-    margin-top: 0 !important;
     margin-bottom: 45px; 
-    text-shadow: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
+    text-shadow: 0 0 15px var(--rojo-corporativo);
     display: block;
     text-align: center;
 }
@@ -198,81 +201,17 @@ img {
     display: inline-block;
     background-color: var(--rojo-corporativo);
     color: #ffffff;
-    /* REDUCIDO: El primer valor (10px) es altura, el segundo (25px) es ancho */
     padding: 10px 25px; 
     font-weight: 900;
     font-size: 0.9rem; 
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-decoration: none;
     border: 2px solid var(--rojo-corporativo);
     transition: 0.3s;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
-}
-
-.btn-add-cart-hero:hover {
-    background-color: transparent;
-    color: var(--rojo-corporativo);
-    box-shadow: 0 0 40px var(--rojo-corporativo);
-    transform: scale(1.05);
 }
 
 /* -------------------------------------------------------------------------
-   6. CARRUSEL Y GRID
-   ------------------------------------------------------------------------- */
-.new-drops-carousel {
-    overflow: hidden;
-    background: var(--negro-tarjeta);
-    border-top: 1px solid var(--gris-borde);
-    border-bottom: 1px solid var(--gris-borde);
-    padding: 25px 0;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 20px;
-    animation: scrollCarousel 18s linear infinite;
-    width: max-content;
-}
-
-@keyframes scrollCarousel {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.categorias-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.value-card-story {
-    background: var(--negro-tarjeta);
-    border: 1px solid var(--rojo-corporativo) !important;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); 
-    padding: 50px 30px;
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.value-card-story:hover {
-    box-shadow: 0 0 30px var(--rojo-corporativo);
-    transform: translateY(-8px);
-}
-
-/* -------------------------------------------------------------------------
-   7. SECCIÓN FINAL (SUBIR BLOQUE)
-   ------------------------------------------------------------------------- */
-main section[style*="text-align: center"] {
-    padding-top: 10px !important; 
-    padding-bottom: 80px !important;
-}
-
-/* -------------------------------------------------------------------------
-   8. FOOTER Y USUARIO
+   7. FOOTER
    ------------------------------------------------------------------------- */
 .main-footer {
     background: var(--negro-footer);
@@ -292,45 +231,10 @@ main section[style*="text-align: center"] {
     font-family: var(--fuente-logo);
     font-size: 1.8rem;
     color: var(--rojo-corporativo);
-    margin-bottom: 10px;
-}
-
-.nav-user-actions-top {
-    position: absolute;
-    right: 40px;
-    top: 15px;
-    display: flex;
-    gap: 15px;
-    z-index: 10002;
-}
-
-.btn-login-text {
-    font-size: 0.65rem;
-    font-weight: 800;
-    color: var(--blanco-puro);
-    border: 1px solid rgba(255, 0, 0, 0.5);
-    padding: 8px 15px;
-    text-transform: uppercase;
-}
-
-.btn-register-glow {
-    background-color: var(--rojo-corporativo);
-    color: #fff;
-    padding: 9px 18px;
-    font-size: 0.65rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-}
-
-.btn-register-glow:hover {
-    box-shadow: 0 0 20px var(--rojo-corporativo);
-    transform: translateY(-2px);
 }
 
 /* RESPONSIVO */
 @media (max-width: 950px) {
-    .nav-user-actions-top { display: none; }
     .categorias-grid-3 { grid-template-columns: 1fr; }
     .btn-add-cart-hero { padding: 8px 20px; font-size: 0.8rem; }
 }
