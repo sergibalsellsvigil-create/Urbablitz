@@ -1,8 +1,8 @@
 /* ==========================================================================
-    URBANBLITZ - VERSIÓN FINAL (ESTILOS + INTERACTIVIDAD)
+    URBANBLITZ - STYLE.CSS (VERSIÓN DEFINITIVA AJUSTADA)
    ========================================================================== */
 
-/* 1. RESET Y BASE (Tu código original) */
+/* 1. RESET Y BASE */
 body { 
     margin: 0; 
     font-family: var(--fuente-texto); 
@@ -14,64 +14,153 @@ body {
 
 a { text-decoration: none; transition: 0.3s; }
 
-/* 2. HEADER (Tu código original) */
+/* 2. HEADER & NAVEGACIÓN */
 .main-header { 
     background-color: var(--negro-menu);
     padding: 20px 0; 
     border-bottom: 2px solid var(--rojo-corporativo);
+    box-shadow: var(--glow-suave);
     z-index: 10000; 
     position: sticky;
     top: 0;
 }
 
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    padding: 0 20px;
+}
+
 .logo { 
     font-family: var(--fuente-logo); 
     font-size: clamp(2.2rem, 8vw, 4rem); 
+    margin: 0; 
     color: var(--rojo-corporativo); 
     text-transform: uppercase; 
     letter-spacing: 10px;
     text-align: center;
 }
 
-.nav-list li a:hover { color: var(--rojo-corporativo); }
+.nav-list { 
+    display: flex; 
+    justify-content: center; 
+    gap: 25px; 
+    list-style: none; 
+    padding: 0;
+    margin: 10px 0 0 0;
+}
 
-/* 3. HERO (Sombra Roja + Botón Interactivo) */
-.hero-content { position: relative; z-index: 2; text-align: center; }
+.nav-list li a { 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    font-size: 0.85rem; 
+    color: var(--blanco-puro);
+}
+
+.nav-list li a:hover, .nav-list li a.active { color: var(--rojo-corporativo); }
+
+/* DROPDOWN */
+.dropdown { position: relative; }
+.dropdown-menu { 
+    display: none; 
+    position: absolute; 
+    background: var(--negro-menu); 
+    min-width: 200px; 
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--rojo-corporativo); 
+    list-style: none; 
+    padding: 10px 0; 
+    z-index: 10001;
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li a { padding: 10px 20px; display: block; text-align: center; font-size: 0.75rem; color: white !important;}
+
+/* 3. HERO (Ajustado con Sombra Roja) */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.hero-bg-video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 1;
+    filter: brightness(0.4); 
+}
+
+.hero-content { position: relative; z-index: 2; padding: 0 20px; }
 
 .slogan-hero {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     color: #ffffff; /* Blanco puro */
     font-weight: 900;
     text-transform: uppercase;
-    /* Tu sombra roja característica */
+    /* Sombra roja intensa (Glow) */
     text-shadow: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
     margin-bottom: 20px;
+}
+
+.btn-add-cart-hero {
+    display: inline-block;
+    background-color: var(--rojo-corporativo);
+    color: var(--blanco-puro);
+    padding: 15px 45px; 
+    font-weight: 900;
+    text-transform: uppercase;
+    box-shadow: var(--glow-boton);
 }
 
 .btn-add-cart-hero:hover {
     background-color: white !important;
     color: var(--rojo-corporativo) !important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-/* 4. TÍTULOS SECCIONES (Próximamente & Descubre el Clan) */
-/* He unificado ambos bajo las mismas reglas para que sean idénticos */
+/* 4. TÍTULOS UNIFICADOS (Próximamente y Descubre el Clan) */
 .texto-proximamente-red, 
 .titulo-categorias-red {
     color: var(--rojo-corporativo) !important;
     text-align: center;
-    font-size: clamp(2rem, 5vw, 3rem); /* Tamaño unificado */
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Tamaño igualado */
     font-weight: 900;
     margin: 60px 0 30px;
     letter-spacing: 5px;
     text-transform: uppercase;
 }
 
-/* 5. CARRUSEL (Tu configuración original de ancho) */
+/* 5. CARRUSEL (Respetando tu track original) */
+.new-drops-carousel {
+    padding: 60px 0;
+    background: #000;
+    overflow: hidden;
+    border-top: 1px solid var(--gris-borde);
+}
+
 .carousel-track {
     display: flex;
     width: calc(300px * 10); 
     animation: scroll-infinito 25s linear infinite;
+}
+
+.carousel-track img {
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    margin: 0 15px;
+    border: 1px solid #222;
 }
 
 @keyframes scroll-infinito {
@@ -79,22 +168,66 @@ a { text-decoration: none; transition: 0.3s; }
     100% { transform: translateX(calc(-310px * 4)); }
 }
 
-/* 6. BOTONES CATEGORÍAS (Acceder, Leer más...) */
+/* 6. GRID Y BOTONES CATEGORÍAS */
+.categorias-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: var(--max-width);
+    margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+.info-card-content {
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.btn-rojo-urban {
+    background-color: var(--rojo-corporativo) !important;
+    color: #fff !important;
+    padding: 15px 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
 .btn-rojo-urban:hover {
     background-color: white !important;
     color: var(--rojo-corporativo) !important;
 }
 
-/* 7. FOOTER (Interacción Gris a Rojo) */
+/* 7. FOOTER AJUSTADO */
+.main-footer { 
+    background: var(--negro-footer); 
+    border-top: 2px solid var(--rojo-corporativo); 
+    padding: 60px 20px 30px; 
+    margin-top: 80px; 
+}
+
+.footer-container { 
+    max-width: var(--max-width); 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 40px; 
+}
+
 .footer-list li a { 
     color: #ccc; 
-    transition: 0.3s; 
-    display: inline-block; 
+    font-size: 0.9rem; 
+    display: inline-block;
+    transition: 0.3s;
 }
 
 .footer-list li a:hover { 
     color: var(--rojo-corporativo) !important; 
-    padding-left: 5px; 
+    padding-left: 5px;
 }
 
 .footer-socials a:hover { 
@@ -102,7 +235,7 @@ a { text-decoration: none; transition: 0.3s; }
     transform: translateY(-5px);
 }
 
-/* 8. RESPONSIVO (Tu código original) */
+/* 8. RESPONSIVO ORIGINAL */
 @media (max-width: 950px) {
     .nav-list { display: none; }
     .nav-list.active { display: flex; }
