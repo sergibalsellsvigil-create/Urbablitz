@@ -1,5 +1,5 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (VERSIÓN COMPLETA + CARRUSEL RECUPERADO)
+    URBANBLITZ - STYLE.CSS (CORRECCIÓN INTERACTIVIDAD + CARRUSEL)
    ========================================================================== */
 
 /* 1. RESET Y CONFIGURACIÓN BASE */
@@ -123,11 +123,12 @@ a, button, i {
     transform: translateY(-3px);
 }
 
-/* 4. CARRUSEL (RECUPERADO) */
+/* 4. CARRUSEL (CORREGIDO) */
 .new-drops-carousel {
     padding: 60px 0;
     background: #000;
     overflow: hidden;
+    width: 100%;
 }
 
 .texto-proximamente-red {
@@ -142,7 +143,7 @@ a, button, i {
 
 .carousel-track {
     display: flex;
-    width: calc(300px * 10); 
+    width: max-content; /* Permite que el contenido se extienda */
     animation: scroll-infinito 25s linear infinite;
 }
 
@@ -152,11 +153,13 @@ a, button, i {
     object-fit: cover;
     margin: 0 15px;
     border: 1px solid #222;
+    flex-shrink: 0; /* Evita que las imágenes se aplasten */
 }
 
+/* Animación esencial para el carrusel */
 @keyframes scroll-infinito {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-310px * 4)); }
+    100% { transform: translateX(-50%); } /* Ajuste dinámico */
 }
 
 /* 5. BOTONES Y GRID CATEGORÍAS */
@@ -179,7 +182,6 @@ a, button, i {
     width: 100%;
     height: 450px;
     object-fit: cover;
-    transition: transform 0.5s ease;
 }
 
 .categoria-card-new:hover img {
