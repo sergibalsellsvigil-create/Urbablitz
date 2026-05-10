@@ -68,7 +68,7 @@ img {
 }
 
 .logo-icon {
-    height: 120px !important; /* Forzamos el tamaño del rayo en píxeles para que se vea grande */
+    height: 140px !important; /* Forzamos el tamaño del rayo en píxeles para que se vea grande */
     width: auto;
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
     display: block;
