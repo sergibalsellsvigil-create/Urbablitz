@@ -361,11 +361,12 @@ img {
     height: 420px;
     object-fit: cover;
     display: block;
-    transition: filter 0.3s;
+    transition: transform 0.4s ease, filter 0.3s;
 }
 
 .categoria-card-new:hover > img {
     filter: brightness(1.05);
+    transform: scale(1.06);
 }
 
 /* Bloque de texto + boton dentro de la tarjeta de categoria */
