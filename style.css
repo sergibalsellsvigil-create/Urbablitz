@@ -120,7 +120,7 @@ img {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 18px);
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: var(--negro-menu);
@@ -131,6 +131,21 @@ img {
     margin: 0;
     min-width: 180px;
     z-index: 9999;
+    /* Puente invisible para que el raton no pierda el hover */
+    padding-top: 20px;
+    margin-top: -14px;
+}
+
+/* Bloque transparente encima del menu que rellena el hueco */
+.dropdown-menu::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
 }
 
 .dropdown:hover .dropdown-menu {
