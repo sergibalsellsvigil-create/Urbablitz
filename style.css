@@ -1,5 +1,5 @@
 /* ==========================================================================
-   URBANBLITZ - STYLE.CSS DEFINITIVO (CON EFECTO GLOW EN CATEGORÍAS)
+   URBANBLITZ - STYLE.CSS DEFINITIVO (CORRECCIONES MÍNIMAS)
    ========================================================================== */
 
 /* -------------------------------------------------------------------------
@@ -33,8 +33,8 @@ img {
    ------------------------------------------------------------------------- */
 .main-header {
     background-color: var(--negro-menu);
-    padding: 20px 0 0;
-    border-bottom: 2px solid #FF0000;
+    padding: 28px 0 0;
+    border-bottom: 2px solid rgba(255, 0, 0, 0.5);
     position: fixed;
     top: 0;
     width: 100%;
@@ -57,22 +57,20 @@ img {
     color: var(--rojo-corporativo);
     text-transform: uppercase;
     letter-spacing: 6px;
-    margin: 10px 0 18px;
+    margin: 0 0 18px;
     font-weight: 900;
     line-height: 1;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
 }
 
 .logo-icon {
-    height: 90px !important;
+    height: 3rem;
     width: auto;
-    filter: drop-shadow(0 0 10px #FF0000);
-    display: block;
-    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.7));
 }
 
 .nav-list {
@@ -82,7 +80,7 @@ img {
     padding: 18px 0;
     margin: 0;
     align-items: center;
-    border-top: 1px solid #330000;
+    border-top: 1px solid rgba(255, 0, 0, 0.2);
     width: 100%;
     justify-content: center;
 }
@@ -132,23 +130,26 @@ img {
     left: 50%;
     transform: translateX(-50%);
     background: var(--negro-menu);
-    border: 1px solid #440000;
+    border: 1px solid rgba(255, 0, 0, 0.25);
     border-top: 2px solid var(--rojo-corporativo);
     list-style: none;
     padding: 8px 0;
     margin: 0;
     min-width: 180px;
     z-index: 9999;
+    padding-top: 20px;
+    margin-top: -14px;
 }
 
-.dropdown::after {
+.dropdown-menu::before {
     content: '';
     display: block;
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 15px; 
+    height: 20px;
+    background: transparent;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -169,23 +170,23 @@ img {
 
 .dropdown-menu li a:hover {
     color: var(--rojo-corporativo);
-    background: #1A0000;
+    background: rgba(255, 0, 0, 0.06);
     opacity: 1;
 }
 
 /* -------------------------------------------------------------------------
-   4. HERO
+   4. HERO (CAMBIO: AUMENTADO PADDING SUPERIOR)
    ------------------------------------------------------------------------- */
 .hero {
     position: relative;
-    min-height: 100vh;
-    padding-top: 220px;
+    height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #000000;
+    background-color: #000;
+    padding-top: 120px; /* Para que el eslogan baje respecto al menú */
 }
 
 .hero-bg-video {
@@ -209,12 +210,12 @@ img {
 
 .slogan-hero {
     font-size: clamp(2.8rem, 7vw, 5.5rem);
-    color: #FFFFFF;
+    color: #ffffff;
     text-transform: uppercase;
     font-weight: 900;
     line-height: 1.1;
     margin: 0 0 20px;
-    text-shadow: 0 0 20px #FF0000, 0 0 40px #FF0000;
+    text-shadow: 0 0 20px var(--rojo-corporativo), 0 0 40px var(--rojo-corporativo);
     display: block;
 }
 
@@ -238,7 +239,7 @@ img {
 .btn-add-cart-hero {
     display: inline-block;
     background-color: var(--rojo-corporativo);
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 16px 40px;
     font-weight: 900;
     font-size: 0.85rem;
@@ -315,7 +316,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   6. SECCION "DESCUBRE EL CLAN" (CORREGIDO CON GLOW ROJO)
+   6. SECCIÓN "DESCUBRE EL CLAN" (CAMBIO: AÑADIDO EFECTO GLOW)
    ------------------------------------------------------------------------- */
 .categorias-home {
     padding-bottom: 80px;
@@ -346,14 +347,13 @@ img {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Añadido box-shadow */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Transición para glow */
 }
 
-/* EFECTO GLOW AL PASAR EL RATÓN */
 .categoria-card-new:hover {
-    transform: translateY(-8px); /* Sube un poquito más */
-    border-color: #FF0000; /* Borde rojo puro */
-    box-shadow: 0 0 20px #FF0000; /* Glow rojo exterior */
+    transform: translateY(-5px);
+    border-color: var(--rojo-corporativo);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* EFECTO GLOW ROJO */
 }
 
 .categoria-card-new > img {
@@ -398,12 +398,12 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   7. BOTONES
+   7. BOTONES ROJOS GLOBALES
    ------------------------------------------------------------------------- */
 .btn-rojo-urban {
     display: inline-block;
     background-color: var(--rojo-corporativo);
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 13px 28px;
     font-family: var(--fuente-texto);
     font-weight: 900;
@@ -426,7 +426,7 @@ img {
 .btn-add-cart {
     display: inline-block;
     background-color: var(--rojo-corporativo);
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 15px 40px;
     font-family: var(--fuente-texto);
     font-weight: 900;
@@ -445,7 +445,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   8. PRODUCT GRID (EFECTO GLOW TAMBIÉN AQUÍ)
+   8. GRID DE PRODUCTOS
    ------------------------------------------------------------------------- */
 .product-grid {
     display: grid;
@@ -462,13 +462,12 @@ img {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .product-card-urban:hover {
     transform: translateY(-5px);
-    border-color: #FF0000;
-    box-shadow: 0 0 15px #FF0000;
+    border-color: var(--rojo-corporativo);
 }
 
 .product-image {
@@ -494,7 +493,7 @@ img {
     top: 14px;
     left: 14px;
     background: var(--rojo-corporativo);
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 0.62rem;
     font-weight: 900;
     letter-spacing: 2px;
@@ -527,15 +526,15 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   9. PAGINAS INTERIORES
+   9. PAGINAS INTERIORES (CAMBIO: AUMENTADO PADDING SUPERIOR)
    ------------------------------------------------------------------------- */
 .shop-header {
-    padding: 260px 20px 60px;
+    padding: 280px 20px 60px; /* Bajado para que no choque el título de Tienda */
     text-align: center;
 }
 
 .page-info-container {
-    padding: 260px 20px 50px;
+    padding: 280px 20px 50px; /* Bajado para que "NUESTRO ADN" no choque */
     text-align: center;
 }
 
@@ -694,7 +693,7 @@ img {
         gap: 0;
         width: 100vw;
         background: var(--negro-menu);
-        border-top: 1px solid #550000;
+        border-top: 1px solid rgba(255, 0, 0, 0.3);
         padding: 8px 0;
         position: absolute;
         top: 100%;
@@ -767,6 +766,6 @@ img {
 
     .shop-header,
     .page-info-container {
-        padding-top: 160px;
+        padding-top: 160px; /* Ajuste para móvil */
     }
 }
