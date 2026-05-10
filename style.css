@@ -141,21 +141,6 @@ img {
     padding-top: 10px;
 }
 
-.dropdown-menu::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -15px;
-    left: 0;
-    width: 100%;
-    height: 15px;
-    background: transparent;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
 .dropdown-menu li a {
     display: block;
     padding: 10px 22px;
@@ -165,13 +150,6 @@ img {
     text-transform: uppercase;
     color: var(--blanco-puro);
     opacity: 0.85;
-    transition: color 0.2s, background 0.2s, opacity 0.2s;
-}
-
-.dropdown-menu li a:hover {
-    color: var(--rojo-corporativo);
-    background: rgba(255, 0, 0, 0.06);
-    opacity: 1;
 }
 
 /* -------------------------------------------------------------------------
@@ -201,7 +179,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   5. AJUSTES EXCLUSIVOS PARA HISTORIA (BOTÓN Y TEXTO AJUSTADOS)
+   5. AJUSTES EXCLUSIVOS PARA HISTORIA (BOTÓN CON ROJO MÁS PEQUEÑO)
    ------------------------------------------------------------------------- */
 .slogan-historia {
     font-size: 2.2rem; 
@@ -210,7 +188,7 @@ img {
     font-weight: 900;
     line-height: 1.1;
     margin-top: 0 !important;
-    margin-bottom: 45px; /* Separación entre texto y botón */
+    margin-bottom: 45px; 
     text-shadow: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
     display: block;
     text-align: center;
@@ -220,9 +198,10 @@ img {
     display: inline-block;
     background-color: var(--rojo-corporativo);
     color: #ffffff;
-    padding: 14px 35px; /* Botón más pequeño y estilizado */
+    /* REDUCIDO: El primer valor (10px) es altura, el segundo (25px) es ancho */
+    padding: 10px 25px; 
     font-weight: 900;
-    font-size: 0.9rem; /* Texto más pequeño acorde al botón */
+    font-size: 0.9rem; 
     text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
@@ -353,5 +332,5 @@ main section[style*="text-align: center"] {
 @media (max-width: 950px) {
     .nav-user-actions-top { display: none; }
     .categorias-grid-3 { grid-template-columns: 1fr; }
-    .btn-add-cart-hero { padding: 12px 25px; font-size: 0.8rem; }
+    .btn-add-cart-hero { padding: 8px 20px; font-size: 0.8rem; }
 }
