@@ -1,5 +1,5 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (DEFINITIVO)
+    URBANBLITZ - STYLE.CSS (CORRECCIÓN INTEGRAL BASADA EN INDEX.HTML)
    ========================================================================== */
 
 /* RESET Y FONDO GLOBAL */
@@ -16,7 +16,7 @@ a { text-decoration: none; transition: 0.3s; }
 
 /* ==========================================================================
     HEADER & NAVEGACIÓN
-   ========================================================================== */
+   ========================================================================= */
 .main-header { 
     background-color: var(--negro-menu);
     padding: 20px 0; 
@@ -43,11 +43,12 @@ a { text-decoration: none; transition: 0.3s; }
     text-transform: uppercase; 
     letter-spacing: 10px;
     text-align: center;
+    margin: 0; /* Asegura que no haya márgenes rotos */
 }
 
-/* OCULTAR HAMBURGUESA EN PC */
+/* Solo aparece en móviles */
 .menu-toggle {
-    display: none !important; 
+    display: none; 
     background: none;
     border: none;
     color: var(--rojo-corporativo);
@@ -61,7 +62,7 @@ a { text-decoration: none; transition: 0.3s; }
     gap: 25px; 
     list-style: none; 
     padding: 0;
-    margin: 10px 0 0 0;
+    margin: 15px 0 0 0;
 }
 
 .nav-list li a { 
@@ -74,7 +75,7 @@ a { text-decoration: none; transition: 0.3s; }
 .nav-list li a:hover, .nav-list li a.active { color: var(--rojo-corporativo); }
 
 /* ==========================================================================
-    HERO & CARRUSEL (CORRECCIÓN INFINITO 6 IMÁGENES)
+    HERO & CARRUSEL (CORRECCIÓN VISUAL)
    ========================================================================== */
 .hero {
     position: relative;
@@ -92,20 +93,36 @@ a { text-decoration: none; transition: 0.3s; }
     filter: brightness(0.4); 
 }
 
-.hero-content { position: relative; z-index: 2; text-align: center; }
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 20px; }
 
 .slogan-hero {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     color: #ffffff;
     text-transform: uppercase;
-    text-shadow: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
+    text-shadow: var(--glow-slogan);
+    margin-bottom: 10px;
+}
+
+/* Título Próximamente (Foto 4) */
+.texto-proximamente-red {
+    color: var(--rojo-corporativo);
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 900;
+    margin: 50px 0 20px;
+}
+
+/* Carrusel Infinito Corregido */
+.new-drops-carousel {
+    overflow: hidden;
+    padding: 40px 0;
+    background: #000;
 }
 
 .carousel-track {
     display: flex;
-    /* Para 6 imágenes infinitas, duplicamos el ancho teórico en el track */
-    width: calc(310px * 12); 
-    animation: scroll-infinito 25s linear infinite;
+    width: max-content; 
+    animation: scroll-infinito 20s linear infinite;
 }
 
 .carousel-track img {
@@ -113,16 +130,16 @@ a { text-decoration: none; transition: 0.3s; }
     height: 380px;
     object-fit: cover;
     margin: 0 15px;
+    border: 1px solid #333; /* Los "cuadraditos" de las fotos */
 }
 
 @keyframes scroll-infinito {
     0% { transform: translateX(0); }
-    /* Desplazamos exactamente el ancho de 6 imágenes (280px + 30px margen = 310px) */
-    100% { transform: translateX(calc(-310px * 6)); }
+    100% { transform: translateX(-50%); }
 }
 
 /* ==========================================================================
-    SECCIÓN DESCUBRE EL CLAN (ZOOM & BOTÓN HOVER)
+    DESCUBRE EL CLAN
    ========================================================================== */
 .titulo-categorias-red {
     color: var(--rojo-corporativo);
@@ -146,32 +163,28 @@ a { text-decoration: none; transition: 0.3s; }
     border: 1px solid var(--gris-borde);
     display: flex;
     flex-direction: column;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .categoria-card-new img {
     width: 100%;
     height: 450px;
     object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease; 
+    transition: 0.5s ease;
 }
 
 .categoria-card-new:hover img {
-    transform: scale(1.1); 
+    transform: scale(1.05);
 }
 
 .info-card-content {
     padding: 25px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    z-index: 2;
-    background: var(--negro-tarjeta); 
+    background: var(--negro-tarjeta);
 }
 
 .btn-rojo-urban {
+    display: inline-block;
     background-color: var(--rojo-corporativo) !important;
     color: #fff !important;
     padding: 15px 30px;
@@ -179,18 +192,17 @@ a { text-decoration: none; transition: 0.3s; }
     text-transform: uppercase;
     border: none;
     margin-top: 15px;
-    cursor: pointer;
     transition: 0.3s;
 }
 
 .btn-rojo-urban:hover {
-    background-color: white !important;
+    background-color: #fff !important;
     color: var(--rojo-corporativo) !important;
-    box-shadow: 0 0 15px var(--rojo-corporativo);
+    box-shadow: var(--glow-boton);
 }
 
 /* ==========================================================================
-    FOOTER (INTERACTIVIDAD HOVER) & RESPONSIVO
+    FOOTER (CORRECCIÓN DE COLORES Y LINKS)
    ========================================================================== */
 .main-footer { 
     background: var(--negro-footer); 
@@ -203,24 +215,56 @@ a { text-decoration: none; transition: 0.3s; }
     margin: 0 auto; 
     display: grid; 
     grid-template-columns: 2fr 1fr 1fr; 
+    gap: 40px;
 }
 
-.footer-list { list-style: none; padding: 0; }
+.footer-title {
+    color: var(--rojo-corporativo);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
 
-/* Efecto hover para los enlaces del footer */
+.footer-list { list-style: none; padding: 0; margin: 0; }
+
+.footer-list li { margin-bottom: 10px; }
+
+/* Evita el azul de los links del footer */
 .footer-list li a { 
-    color: #ccc; 
-    transition: 0.3s; 
+    color: #bbb !important; 
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
 .footer-list li a:hover { 
-    color: var(--rojo-corporativo); 
-    padding-left: 5px;
+    color: var(--rojo-corporativo) !important; 
+    padding-left: 8px;
 }
 
+.footer-socials a {
+    color: #fff !important;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.footer-socials a:hover { color: var(--rojo-corporativo) !important; }
+
+.footer-legal {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* ==========================================================================
+    RESPONSIVO
+   ========================================================================== */
 @media (max-width: 950px) {
-    .menu-toggle { display: block !important; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); }
-    .nav-list { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--negro-menu); flex-direction: column; }
+    .menu-toggle { display: block !important; position: absolute; left: 20px; top: 30px; }
+    .nav-list { display: none; flex-direction: column; width: 100%; background: var(--negro-menu); text-align: center; padding: 20px 0; }
     .nav-list.active { display: flex; }
     .categorias-grid-3 { grid-template-columns: 1fr; }
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
 }
