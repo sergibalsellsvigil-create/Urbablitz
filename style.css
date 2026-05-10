@@ -342,20 +342,19 @@ img {
     padding: 0 20px;
 }
 
-/* CAJETILLAS DE HISTORIA CON GLOW ROJO */
+/* CAJETILLAS DE HISTORIA CON GLOW ROJO FIJO */
 .value-card-story {
     background: var(--negro-tarjeta);
-    border: 1px solid var(--rojo-corporativo) !important; /* Borde rojo fijo */
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); /* Glow rojo fijo */
+    border: 1px solid var(--rojo-corporativo) !important;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Glow fijo */
     padding: 50px 30px;
     text-align: center;
-    transition: var(--transicion);
+    transition: all 0.3s ease;
     position: relative;
 }
 
 .value-card-story:hover {
-    border-color: var(--rojo-corporativo);
-    box-shadow: 0 0 30px var(--rojo-corporativo); /* Glow intenso al pasar mouse */
+    box-shadow: 0 0 30px var(--rojo-corporativo); /* Glow más fuerte en hover */
     transform: translateY(-8px);
 }
 
@@ -564,6 +563,19 @@ img {
     letter-spacing: 5px;
     color: var(--blanco-puro);
     margin: 0 0 15px;
+}
+
+/* TÍTULO FINAL HISTORIA - BLANCO, GRANDE Y CON GLOW ROJO */
+.section-title-inside {
+    font-size: clamp(2.5rem, 8vw, 5rem) !important;
+    color: var(--blanco-puro) !important;
+    text-shadow: 0 0 20px var(--rojo-corporativo), 0 0 40px var(--rojo-corporativo);
+    margin-bottom: 30px !important;
+}
+
+/* AJUSTE PARA SUBIR EL BLOQUE FINAL */
+main section[style*="padding: 120px 20px"] {
+    padding: 70px 20px !important;
 }
 
 .info-text,
