@@ -1,5 +1,5 @@
 /* ==========================================================================
-   URBANBLITZ - STYLE.CSS DEFINITIVO (CORREGIDO)
+   URBANBLITZ - STYLE.CSS DEFINITIVO (CON EFECTO GLOW EN CATEGORÍAS)
    ========================================================================== */
 
 /* -------------------------------------------------------------------------
@@ -33,7 +33,7 @@ img {
    ------------------------------------------------------------------------- */
 .main-header {
     background-color: var(--negro-menu);
-    padding: 20px 0 0; /* Ajustado para mejor equilibrio */
+    padding: 20px 0 0;
     border-bottom: 2px solid #FF0000;
     position: fixed;
     top: 0;
@@ -68,7 +68,7 @@ img {
 }
 
 .logo-icon {
-    height: 90px !important; /* Rayo grande y definido */
+    height: 90px !important;
     width: auto;
     filter: drop-shadow(0 0 10px #FF0000);
     display: block;
@@ -174,12 +174,12 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   4. HERO (CORREGIDO: YA NO SE OCULTA BAJO EL MENU)
+   4. HERO
    ------------------------------------------------------------------------- */
 .hero {
     position: relative;
     min-height: 100vh;
-    padding-top: 220px; /* Empuja el contenido hacia abajo del menú */
+    padding-top: 220px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -315,7 +315,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   6. SECCION "DESCUBRE EL CLAN"
+   6. SECCION "DESCUBRE EL CLAN" (CORREGIDO CON GLOW ROJO)
    ------------------------------------------------------------------------- */
 .categorias-home {
     padding-bottom: 80px;
@@ -346,12 +346,14 @@ img {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Añadido box-shadow */
 }
 
+/* EFECTO GLOW AL PASAR EL RATÓN */
 .categoria-card-new:hover {
-    transform: translateY(-5px);
-    border-color: var(--rojo-corporativo);
+    transform: translateY(-8px); /* Sube un poquito más */
+    border-color: #FF0000; /* Borde rojo puro */
+    box-shadow: 0 0 20px #FF0000; /* Glow rojo exterior */
 }
 
 .categoria-card-new > img {
@@ -443,7 +445,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   8. PRODUCT GRID
+   8. PRODUCT GRID (EFECTO GLOW TAMBIÉN AQUÍ)
    ------------------------------------------------------------------------- */
 .product-grid {
     display: grid;
@@ -460,12 +462,13 @@ img {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card-urban:hover {
     transform: translateY(-5px);
-    border-color: var(--rojo-corporativo);
+    border-color: #FF0000;
+    box-shadow: 0 0 15px #FF0000;
 }
 
 .product-image {
@@ -524,15 +527,15 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   9. PAGINAS INTERIORES (CORREGIDO: MAS ESPACIO SUPERIOR)
+   9. PAGINAS INTERIORES
    ------------------------------------------------------------------------- */
 .shop-header {
-    padding: 260px 20px 60px; /* Aumentado para el nuevo tamaño del logo */
+    padding: 260px 20px 60px;
     text-align: center;
 }
 
 .page-info-container {
-    padding: 260px 20px 50px; /* Aumentado para el nuevo tamaño del logo */
+    padding: 260px 20px 50px;
     text-align: center;
 }
 
@@ -764,6 +767,6 @@ img {
 
     .shop-header,
     .page-info-container {
-        padding-top: 160px; /* Ajuste móvil */
+        padding-top: 160px;
     }
 }
