@@ -117,7 +117,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   3. DROPDOWN
+   3. DROPDOWN (CORREGIDO PARA PERMITIR CLIC EN ENLACE PADRE)
    ------------------------------------------------------------------------- */
 .dropdown {
     position: relative;
@@ -137,18 +137,21 @@ img {
     margin: 0;
     min-width: 180px;
     z-index: 9999;
-    padding-top: 20px;
-    margin-top: -14px;
+    
+    /* CAMBIOS AQUÍ: Bajamos el inicio del menú para no tapar el clic */
+    margin-top: 10px; 
+    padding-top: 10px;
 }
 
+/* Puente invisible para que no se cierre el menú al bajar el ratón */
 .dropdown-menu::before {
     content: '';
     display: block;
     position: absolute;
-    top: 0;
+    top: -15px;
     left: 0;
     width: 100%;
-    height: 20px;
+    height: 15px;
     background: transparent;
 }
 
@@ -186,7 +189,6 @@ img {
     justify-content: center;
     overflow: hidden;
     background-color: #000;
-    /* Cambio: de 120px a 250px para bajar el texto en la Home */
     padding-top: 250px; 
 }
 
@@ -348,14 +350,12 @@ img {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    /* Cambio: Aseguramos la transición para el glow */
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .categoria-card-new:hover {
     transform: translateY(-5px);
     border-color: var(--rojo-corporativo);
-    /* Cambio: Se añade el GLOW ROJO aquí */
     box-shadow: 0 0 20px var(--rojo-corporativo); 
 }
 
@@ -448,7 +448,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   8. GRID DE PRODUCTOS (Glow añadido aquí también para ser uniforme)
+   8. GRID DE PRODUCTOS
    ------------------------------------------------------------------------- */
 .product-grid {
     display: grid;
@@ -471,7 +471,6 @@ img {
 .product-card-urban:hover {
     transform: translateY(-5px);
     border-color: var(--rojo-corporativo);
-    /* Cambio: Se añade glow también a los productos */
     box-shadow: 0 0 15px var(--rojo-corporativo);
 }
 
@@ -534,13 +533,11 @@ img {
    9. PAGINAS INTERIORES (BAJADO PARA "NUESTRO ADN" Y "TIENDA")
    ------------------------------------------------------------------------- */
 .shop-header {
-    /* Cambio: Aumentado de 280px a 350px para bajar el título Tienda */
     padding: 350px 20px 60px; 
     text-align: center;
 }
 
 .page-info-container {
-    /* Cambio: Aumentado de 280px a 350px para bajar "NUESTRO ADN" */
     padding: 350px 20px 50px; 
     text-align: center;
 }
@@ -773,7 +770,6 @@ img {
 
     .shop-header,
     .page-info-container {
-        /* Cambio: Ajustado para móvil */
         padding-top: 200px; 
     }
 }
