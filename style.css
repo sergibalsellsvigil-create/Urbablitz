@@ -317,7 +317,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   6. SECCIÓN "DESCUBRE EL CLAN" / QUIÉNES SOMOS (CON GLOW)
+   6. SECCIÓN "DESCUBRE EL CLAN" / QUIÉNES SOMOS (CON GLOW ROJO FIJO)
    ------------------------------------------------------------------------- */
 .categorias-home {
     padding-bottom: 80px;
@@ -340,6 +340,23 @@ img {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* CAJETILLAS DE HISTORIA CON GLOW ROJO */
+.value-card-story {
+    background: var(--negro-tarjeta);
+    border: 1px solid var(--rojo-corporativo) !important; /* Borde rojo fijo */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); /* Glow rojo fijo */
+    padding: 50px 30px;
+    text-align: center;
+    transition: var(--transicion);
+    position: relative;
+}
+
+.value-card-story:hover {
+    border-color: var(--rojo-corporativo);
+    box-shadow: 0 0 30px var(--rojo-corporativo); /* Glow intenso al pasar mouse */
+    transform: translateY(-8px);
 }
 
 .categoria-card-new {
