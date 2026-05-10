@@ -1,5 +1,5 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (CORRECCIÓN ZOOM DINÁMICO Y MENÚ)
+    URBANBLITZ - STYLE.CSS (DEFINITIVO)
    ========================================================================== */
 
 /* RESET Y FONDO GLOBAL */
@@ -74,7 +74,7 @@ a { text-decoration: none; transition: 0.3s; }
 .nav-list li a:hover, .nav-list li a.active { color: var(--rojo-corporativo); }
 
 /* ==========================================================================
-    HERO & CARRUSEL
+    HERO & CARRUSEL (CORRECCIÓN INFINITO 6 IMÁGENES)
    ========================================================================== */
 .hero {
     position: relative;
@@ -103,7 +103,8 @@ a { text-decoration: none; transition: 0.3s; }
 
 .carousel-track {
     display: flex;
-    width: calc(300px * 10); 
+    /* Para 6 imágenes infinitas, duplicamos el ancho teórico en el track */
+    width: calc(310px * 12); 
     animation: scroll-infinito 25s linear infinite;
 }
 
@@ -116,11 +117,12 @@ a { text-decoration: none; transition: 0.3s; }
 
 @keyframes scroll-infinito {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-310px * 4)); }
+    /* Desplazamos exactamente el ancho de 6 imágenes (280px + 30px margen = 310px) */
+    100% { transform: translateX(calc(-310px * 6)); }
 }
 
 /* ==========================================================================
-    SECCIÓN DESCUBRE EL CLAN (CORRECCIÓN DE ZOOM)
+    SECCIÓN DESCUBRE EL CLAN (ZOOM & BOTÓN HOVER)
    ========================================================================== */
 .titulo-categorias-red {
     color: var(--rojo-corporativo);
@@ -144,21 +146,19 @@ a { text-decoration: none; transition: 0.3s; }
     border: 1px solid var(--gris-borde);
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* NECESARIO para que el zoom no se salga del cuadro */
+    overflow: hidden; 
 }
 
-/* LA FOTO SIN ZOOM POR DEFECTO */
 .categoria-card-new img {
     width: 100%;
     height: 450px;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease; /* Transición suave para el zoom */
+    transition: transform 0.5s ease; 
 }
 
-/* EL ZOOM SOLO AL PASAR EL RATÓN */
 .categoria-card-new:hover img {
-    transform: scale(1.1); /* Zoom del 10% */
+    transform: scale(1.1); 
 }
 
 .info-card-content {
@@ -168,7 +168,7 @@ a { text-decoration: none; transition: 0.3s; }
     flex-direction: column;
     align-items: center; 
     z-index: 2;
-    background: var(--negro-tarjeta); /* Para que el texto tape la imagen al hacer zoom */
+    background: var(--negro-tarjeta); 
 }
 
 .btn-rojo-urban {
@@ -186,10 +186,11 @@ a { text-decoration: none; transition: 0.3s; }
 .btn-rojo-urban:hover {
     background-color: white !important;
     color: var(--rojo-corporativo) !important;
+    box-shadow: 0 0 15px var(--rojo-corporativo);
 }
 
 /* ==========================================================================
-    FOOTER & RESPONSIVO
+    FOOTER (INTERACTIVIDAD HOVER) & RESPONSIVO
    ========================================================================== */
 .main-footer { 
     background: var(--negro-footer); 
@@ -202,6 +203,19 @@ a { text-decoration: none; transition: 0.3s; }
     margin: 0 auto; 
     display: grid; 
     grid-template-columns: 2fr 1fr 1fr; 
+}
+
+.footer-list { list-style: none; padding: 0; }
+
+/* Efecto hover para los enlaces del footer */
+.footer-list li a { 
+    color: #ccc; 
+    transition: 0.3s; 
+}
+
+.footer-list li a:hover { 
+    color: var(--rojo-corporativo); 
+    padding-left: 5px;
 }
 
 @media (max-width: 950px) {
