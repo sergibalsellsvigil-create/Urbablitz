@@ -1,149 +1,48 @@
-/* ==========================================================================
-   URBANBLITZ - STYLE.CSS DEFINITIVO (CORRECCIÓN DE IMÁGENES 1, 2, 3 Y 4)
-   ========================================================================== */
+/* --- MEJORAS ESTÉTICAS FINALES --- */
 
-/* IMPORTANTE: He metido las variables aquí dentro para que no dependas de 
-   otro archivo y no haya fallos de carga. */
-:root {
-    --rojo-corporativo: #ff0000;
-    --negro-fondo: #050505;
-    --negro-tarjeta: #0d0d0d;
-    --blanco-puro: #ffffff;
-    --max-width: 1200px; /* Ajustado para mejor centrado */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body { 
-    font-family: 'Inter', sans-serif; 
-    background-color: var(--negro-fondo);
-    color: var(--blanco-puro); 
-    overflow-x: hidden; 
-}
-
-/* 1. SOLUCIÓN IMAGEN 1: HERO (VIDEO COMPLETO Y ESLOGAN CENTRADO) */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Fuerza pantalla completa */
-    display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
-    background-color: #000;
-}
-
-.hero-bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Clave: hace que el video llene todo el espacio */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
+/* Mejora del Slogan Hero */
 .slogan-hero {
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    color: var(--blanco-puro) !important;
-    text-transform: uppercase;
-    font-weight: 900;
-    text-shadow: 0 0 20px var(--rojo-corporativo);
-    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 10px rgba(0,0,0,0.5) !important;
 }
 
-/* 2. SOLUCIÓN IMAGEN 2: PRÓXIMAMENTE (ROJO Y CENTRADO) */
-.new-drops-carousel {
-    padding: 100px 0;
-    text-align: center;
-}
-
-.texto-proximamente-red {
-    color: var(--rojo-corporativo) !important;
-    font-size: 3rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 40px;
-}
-
-/* 3. SOLUCIÓN IMAGEN 3: DESCUBRE EL CLAN Y ZOOM SUAVE */
-.titulo-categorias-red {
-    color: var(--rojo-corporativo) !important;
-    text-align: center;
-    font-size: 3.5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin: 80px 0 40px;
-}
-
-.categorias-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
+/* Efecto Premium en Cajetillas */
 .categoria-card-new {
-    overflow: hidden; /* Corta la imagen cuando hace zoom */
-    background: var(--negro-tarjeta);
-    position: relative;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Transición suave estilo Apple */
+}
+
+.categoria-card-new:hover {
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+    transform: translateY(-10px);
 }
 
 .categoria-card-new img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    transition: transform 0.8s ease; /* Zoom suave */
-    display: block;
+    transition: transform 0.8s ease;
 }
 
 .categoria-card-new:hover img {
-    transform: scale(1.1); /* Hace el zoom del 10% */
+    transform: scale(1.08);
 }
 
-.info-card-content {
-    padding: 30px;
-    text-align: center;
+/* Botones con más "fuerza" */
+.btn-rojo-urban, .btn-add-cart-hero {
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    border-radius: 0; /* Streetwear es cuadrado, no redondo */
+    position: relative;
+    overflow: hidden;
 }
 
-/* 4. SOLUCIÓN IMAGEN 4: FOOTER CENTRADO */
-.main-footer {
-    background-color: #000;
-    border-top: 2px solid var(--rojo-corporativo);
-    padding: 80px 20px 40px;
+/* Animación extra al botón */
+.btn-rojo-urban:hover {
+    background-color: #fff !important;
+    color: #ff0000 !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-.footer-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
-    gap: 40px;
-    text-align: center;
-}
-
-.footer-legal {
-    text-align: center;
-    margin-top: 60px;
-    border-top: 1px solid #111;
-    padding-top: 20px;
-    color: #444;
-}
-
-/* QUITAR AZUL DE ENLACES */
-a {
-    text-decoration: none !important;
-    color: inherit !important;
+/* Separación elegante de secciones */
+.categorias-home {
+    padding: 100px 0;
+    border-top: 1px solid #1a1a1a;
 }
