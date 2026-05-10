@@ -8,39 +8,16 @@
     <link rel="stylesheet" href="variables.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    
     <style>
-        /* Estilos específicos para la página de registro */
-        .registration-container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 150px 20px 80px; /* Espacio para el header fijo */
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/herooso.png'); /* Fondo con overlay oscuro */
+        /* Ajuste específico para que el fondo se vea bien en esta página */
+        .auth-wrapper {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/herooso.png');
             background-size: cover;
             background-position: center;
         }
 
-        .form-card {
-            background: var(--negro-tarjeta);
-            border: 1px solid var(--gris-borde);
-            padding: 40px;
-            width: 100%;
-            max-width: 450px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
-
-        .form-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--rojo-corporativo);
-        }
-
+        /* Estilos internos del formulario para mantener coherencia */
         .form-header {
             text-align: center;
             margin-bottom: 30px;
@@ -89,6 +66,7 @@
             border-color: var(--rojo-corporativo);
         }
 
+        /* Reutilizamos el estilo de tu botón pequeño pero al 100% de ancho */
         .btn-submit-clan {
             width: 100%;
             background: var(--rojo-corporativo);
@@ -100,7 +78,7 @@
             letter-spacing: 2px;
             cursor: pointer;
             transition: 0.3s;
-            margin-top: 10px;
+            font-size: 0.9rem;
         }
 
         .btn-submit-clan:hover {
@@ -135,15 +113,13 @@
                 <li><a href="historia.html">Quiénes somos</a></li>
                 <li><a href="tienda.html">Tienda</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li class="nav-user-actions">
-                    <a href="pagina_sesion.html" class="btn-login-text">INICIAR SESIÓN</a>
-                </li>
+                <li><a href="pagina_sesion.html" class="btn-login-text">INICIAR SESIÓN</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="registration-container">
-        <section class="form-card">
+    <main class="auth-wrapper">
+        <section class="auth-card">
             <div class="form-header">
                 <h2>ÚNETE AL CLAN</h2>
                 <p>Forma parte de la élite de Urbanblitz</p>
@@ -179,8 +155,8 @@
         </section>
     </main>
 
-    <footer class="main-footer">
-        <section class="footer-legal">
+    <footer class="main-footer" style="padding: 30px 20px;">
+        <section style="text-align: center; font-size: 0.8rem; opacity: 0.6;">
             <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
         </section>
     </footer>

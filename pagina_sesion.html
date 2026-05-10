@@ -8,36 +8,13 @@
     <link rel="stylesheet" href="variables.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    
     <style>
-        /* Estilos específicos para la página de login sin romper el style.css global */
-        .login-main {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 120px 20px 60px;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-        }
-
-        .login-card {
-            background: var(--negro-tarjeta);
-            border: 1px solid var(--gris-borde);
-            padding: 40px;
-            width: 100%;
-            max-width: 450px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .login-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--rojo-corporativo);
+        /* Fondo con overlay oscuro y la imagen de marca */
+        .auth-wrapper {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('img/herooso.png');
+            background-size: cover;
+            background-position: center;
         }
 
         .login-header {
@@ -50,6 +27,7 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 3px;
+            color: var(--blanco-puro);
             margin-bottom: 10px;
         }
 
@@ -100,11 +78,11 @@
             cursor: pointer;
             transition: all 0.3s;
             margin-top: 10px;
+            font-size: 0.9rem;
         }
 
         .btn-login-submit:hover {
-            background: white;
-            color: black;
+            box-shadow: 0 0 20px var(--rojo-corporativo);
             transform: translateY(-2px);
         }
 
@@ -117,37 +95,35 @@
         .login-footer-links a {
             color: var(--blanco-puro);
             text-decoration: underline;
-            opacity: 0.6;
-            margin: 0 10px;
+            opacity: 0.7;
         }
 
         .login-footer-links a:hover {
             opacity: 1;
             color: var(--rojo-corporativo);
         }
-
-        .back-to-home {
-            position: absolute;
-            top: 40px;
-            left: 40px;
-            font-size: 0.8rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="back-to-home">
-        <i class="fa-solid fa-arrow-left"></i> Volver
-    </a>
+    <header class="main-header">
+        <nav class="nav-container">
+            <h1 class="logo">
+                <img src="img/header-logo.png" alt="" class="logo-icon">
+                URBANBLITZ
+            </h1>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Quiénes somos</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="pagina_registro.html" class="btn-register-glow">ÚNETE AL CLAN</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main class="login-main">
-        <article class="login-card">
+    <main class="auth-wrapper">
+        <article class="auth-card">
             <header class="login-header">
                 <h2>Identificación</h2>
                 <p>Bienvenido de nuevo al Clan Urbanblitz.</p>
@@ -169,11 +145,17 @@
 
             <footer class="login-footer-links">
                 <a href="pagina_registro.html">Crear Cuenta</a>
-                <span>|</span>
+                <span style="color: var(--gris-borde); margin: 0 10px;">|</span>
                 <a href="#">¿Olvidaste la clave?</a>
             </footer>
         </article>
     </main>
+
+    <footer class="main-footer" style="padding: 30px 20px;">
+        <section style="text-align: center; font-size: 0.8rem; opacity: 0.6;">
+            <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
+        </section>
+    </footer>
 
 </body>
 </html>
