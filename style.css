@@ -524,12 +524,12 @@ img {
    9. PAGINAS INTERIORES (MODIFICADO: Subida de título y orden de textos)
    ------------------------------------------------------------------------- */
 .shop-header {
-    padding: 180px 20px 40px; /* Reducido de 280px para subir el título */
+    padding: 180px 20px 40px;
     text-align: center;
 }
 
 .page-info-container {
-    padding: 180px 20px 40px; 
+    padding: 140px 20px 40px;
     text-align: center;
 }
 
@@ -539,7 +539,7 @@ img {
     text-transform: uppercase;
     letter-spacing: 5px;
     color: var(--blanco-puro);
-    margin: 0 0 5px; /* Margen reducido para que el eslogan esté pegado debajo */
+    margin: 0 0 20px;
 }
 
 .info-text,
@@ -547,7 +547,7 @@ img {
     font-size: 1rem;
     color: var(--texto-secundario);
     text-align: center;
-    margin: 0 auto 10px; /* Margen inferior para separar del siguiente bloque */
+    margin: 0 auto 10px;
     max-width: 600px;
     line-height: 1.6;
 }
@@ -761,6 +761,6 @@ img {
 
     .shop-header,
     .page-info-container {
-        padding-top: 150px; 
+        padding-top: 120px;
     }
 }
