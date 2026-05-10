@@ -1,5 +1,5 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (DEFINITIVO - CORRECCIÓN HOVER FOOTER)
+    URBANBLITZ - STYLE.CSS (DEFINITIVO CON EFECTOS HOVER)
    ========================================================================== */
 
 /* RESET Y FONDO GLOBAL */
@@ -9,9 +9,9 @@ body {
     background-color: var(--negro-fondo) !important;
     color: var(--blanco-puro); 
     overflow-x: hidden; 
-    line-height: 1.6; 
 }
 
+/* Transición suave para todos los enlaces */
 a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 
 /* HEADER Y NAVEGACIÓN */
@@ -30,8 +30,6 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    padding: 0 20px;
 }
 
 .logo { 
@@ -40,17 +38,14 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     color: var(--rojo-corporativo); 
     text-transform: uppercase; 
     letter-spacing: 10px;
-    text-align: center;
     margin-bottom: 10px;
 }
 
 .nav-list { 
     display: flex; 
-    justify-content: center; 
     gap: 25px; 
     list-style: none; 
     padding: 0;
-    margin: 0;
 }
 
 .nav-list li a { 
@@ -58,18 +53,17 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     text-transform: uppercase; 
     font-size: 0.85rem;
     color: var(--blanco-puro);
-    padding: 10px 0;
-    display: block;
 }
 
+/* HOVER MENÚ PRINCIPAL */
 .nav-list li a:hover { 
     color: var(--rojo-corporativo); 
-    text-shadow: 0 0 10px var(--rojo-corporativo); 
+    text-shadow: 0 0 10px var(--rojo-corporativo); /* Efecto brillo al pasar ratón */
 }
 
 .nav-list li a.active { color: var(--rojo-corporativo); }
 
-/* SUBMENÚS */
+/* SUBMENÚS (DROPDOWNS) */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -80,10 +74,13 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     min-width: 160px;
     list-style: none;
     padding: 10px 0;
-    display: none;
+    display: none; 
     z-index: 1000;
 }
 
+.dropdown-menu li a { padding: 8px 20px; display: block; font-size: 0.8rem; }
+
+/* HOVER SUBMENÚ */
 .dropdown-menu li a:hover {
     background-color: var(--rojo-corporativo);
     color: white !important;
@@ -91,7 +88,7 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 
 .dropdown:hover .dropdown-menu { display: block; }
 
-/* HERO (ESLOGAN E IMAGEN) */
+/* HERO Y BOTÓN EXPLORAR */
 .hero {
     position: relative;
     height: 100vh;
@@ -121,13 +118,14 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     display: block;
 }
 
+/* BOTÓN HERO CON HOVER INVERSO */
 .btn-add-cart-hero {
     display: inline-block;
-    background-color: var(--rojo-corporativo);
+    background-color: var(--rojo-corporativo) !important;
     color: #ffffff !important;
     padding: 15px 35px;
     font-weight: 900;
-    text-transform: uppercase;
+    margin-top: 20px;
     border: 2px solid var(--rojo-corporativo);
     transition: 0.3s;
 }
@@ -135,10 +133,11 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 .btn-add-cart-hero:hover {
     background-color: white !important;
     color: var(--rojo-corporativo) !important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    border-color: white;
+    transform: translateY(-3px); /* Pequeño salto hacia arriba */
 }
 
-/* CARRUSEL */
+/* CARRUSEL Y TÍTULO PRÓXIMAMENTE */
 .carousel-header { width: 100%; display: flex; justify-content: center; background: #000; }
 
 .texto-proximamente-red {
@@ -155,6 +154,12 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     object-fit: cover; margin: 0 15px;
     border: 2px solid #333;
     background-color: #111;
+    transition: 0.5s;
+}
+
+.carousel-track img:hover {
+    border-color: var(--rojo-corporativo);
+    transform: scale(1.05); /* Zoom suave al pasar por las fotos */
 }
 
 @keyframes scroll-infinito {
@@ -165,9 +170,7 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 .new-drops-carousel { overflow: hidden; background: #000; padding-bottom: 60px; }
 .carousel-track { display: flex; width: max-content; animation: scroll-infinito 25s linear infinite; }
 
-/* ==========================================================================
-    FOOTER (CORRECCIÓN HOVER)
-   ========================================================================== */
+/* FOOTER CON HOVER */
 .main-footer { 
     background: var(--negro-footer);
     border-top: 2px solid var(--rojo-corporativo); 
@@ -184,31 +187,16 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 
 .footer-list { list-style: none; padding: 0; }
 
-/* Ajuste de color base y transición */
 .footer-list li a { 
     color: var(--texto-secundario) !important; 
     font-size: 0.9rem;
-    display: inline-block;
-    transition: 0.3s ease;
-}
-
-/* HOVER FORZADO EN FOOTER */
-.footer-list li a:hover { 
-    color: var(--rojo-corporativo) !important; 
-    transform: translateX(5px); /* Pequeño movimiento para indicar interactividad */
-}
-
-/* Iconos de Redes Sociales */
-.footer-socials a {
-    color: var(--blanco-puro);
-    font-size: 1.5rem;
-    margin-right: 15px;
     transition: 0.3s;
 }
 
-.footer-socials a:hover {
-    color: var(--rojo-corporativo);
-    filter: drop-shadow(0 0 5px var(--rojo-corporativo));
+/* HOVER EN FOOTER */
+.footer-list li a:hover { 
+    color: var(--rojo-corporativo) !important; 
+    padding-left: 5px; /* Efecto de desplazamiento a la derecha */
 }
 
 /* RESPONSIVO */
