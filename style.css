@@ -1,5 +1,5 @@
 /* ==========================================================================
-   URBANBLITZ - STYLE.CSS DEFINITIVO (COLORES EN HEXADECIMAL)
+   URBANBLITZ - STYLE.CSS DEFINITIVO (CORRECCIÓN DE SOLAPAMIENTO)
    ========================================================================== */
 
 /* -------------------------------------------------------------------------
@@ -34,7 +34,7 @@ img {
 .main-header {
     background-color: var(--negro-menu);
     padding: 20px 0 0;
-    border-bottom: 2px solid #FF0000; /* Rojo puro en Hex */
+    border-bottom: 2px solid #FF0000;
     position: fixed;
     top: 0;
     width: 100%;
@@ -68,9 +68,9 @@ img {
 }
 
 .logo-icon {
-    height: 140px !important; /* Tamaño del rayo */
+    height: 90px !important;
     width: auto;
-    filter: drop-shadow(0 0 10px #FF0000); /* Sombra en Hex */
+    filter: drop-shadow(0 0 10px #FF0000);
     display: block;
     object-fit: contain;
 }
@@ -82,7 +82,7 @@ img {
     padding: 18px 0;
     margin: 0;
     align-items: center;
-    border-top: 1px solid #330000; /* Rojo muy oscuro para separación */
+    border-top: 1px solid #330000;
     width: 100%;
     justify-content: center;
 }
@@ -169,16 +169,17 @@ img {
 
 .dropdown-menu li a:hover {
     color: var(--rojo-corporativo);
-    background: #1A0000; /* Fondo sutil al pasar el ratón */
+    background: #1A0000;
     opacity: 1;
 }
 
 /* -------------------------------------------------------------------------
-   4. HERO
+   4. HERO (CORREGIDO PARA NO SER TAPADO)
    ------------------------------------------------------------------------- */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 220px; /* Espacio para que el menú no tape el eslogan */
     width: 100%;
     display: flex;
     align-items: center;
@@ -521,15 +522,15 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   9. PAGINAS INTERIORES
+   9. PAGINAS INTERIORES (CORREGIDO PARA NO SER TAPADO)
    ------------------------------------------------------------------------- */
 .shop-header {
-    padding: 180px 20px 40px;
+    padding: 260px 20px 40px; /* Aumentado para dejar espacio al logo */
     text-align: center;
 }
 
 .page-info-container {
-    padding: 140px 20px 40px;
+    padding: 260px 20px 40px; /* Aumentado para dejar espacio al logo */
     text-align: center;
 }
 
@@ -761,6 +762,6 @@ img {
 
     .shop-header,
     .page-info-container {
-        padding-top: 120px;
+        padding-top: 150px;
     }
 }
