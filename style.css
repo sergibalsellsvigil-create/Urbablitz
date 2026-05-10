@@ -117,7 +117,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   3. DROPDOWN (CORREGIDO: Ya no tapa el enlace principal)
+   3. DROPDOWN (CORREGIDO: Soporta Hombre, Mujer y Unisex)
    ------------------------------------------------------------------------- */
 .dropdown {
     position: relative;
@@ -126,7 +126,7 @@ img {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%; /* Empieza exactamente debajo del enlace */
+    top: 100%; 
     left: 50%;
     transform: translateX(-50%);
     background: var(--negro-menu);
@@ -139,7 +139,6 @@ img {
     z-index: 9999;
 }
 
-/* Puente invisible corregido: Se coloca detrás del texto para no bloquearlo */
 .dropdown::after {
     content: '';
     display: block;
@@ -147,7 +146,7 @@ img {
     top: 100%;
     left: 0;
     width: 100%;
-    height: 15px; /* Altura del hueco para no perder el hover */
+    height: 15px; 
 }
 
 .dropdown:hover .dropdown-menu {
