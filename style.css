@@ -241,7 +241,7 @@ img {
 }
 
 .slogan-hero {
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-size: clamp(2rem, 5vw, 4rem);
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 900;
@@ -252,7 +252,7 @@ img {
 }
 
 .hero-content p {
-    font-size: 1.3rem;
+    font-size: 1.05rem;
     color: var(--blanco-puro);
     opacity: 0.85;
     margin: 0 0 30px;
@@ -287,9 +287,9 @@ img {
     display: inline-block;
     background-color: var(--rojo-corporativo);
     color: #ffffff;
-    padding: 16px 40px;
+    padding: 13px 30px;
     font-weight: 900;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
